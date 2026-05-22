@@ -159,6 +159,16 @@ def parse_book(book: dict) -> list[dict]:
             or default_tradition
         )
 
+        # Section: hero (front door — humans doing great things) or fable (animal/moral tales).
+        # Default to per-source default; per-title overrides demote individual stories.
+        section_overrides = book.get("section_overrides", {})
+        section_overrides_lc = {k.lower(): v for k, v in section_overrides.items()}
+        section = (
+            section_overrides.get(title)
+            or section_overrides_lc.get(title.lower())
+            or book.get("default_section", "hero")
+        )
+
         stories.append({
             "id": f"{book['source_slug']}__{slugify(title)}",
             "title": title,
@@ -167,6 +177,7 @@ def parse_book(book: dict) -> list[dict]:
             "author": book["author"],
             "year": book["year"],
             "tradition": tradition,
+            "section": section,
             "word_count": words,
             "minutes": estimate_minutes(words),
             "public_domain": True,
@@ -293,6 +304,43 @@ BOOKS = [
         ],
     },
     {
+        "file": "lodge-american-heroes.txt",
+        "source": "Hero Tales from American History",
+        "source_slug": "lodge-american",
+        "author": "Henry Cabot Lodge & Theodore Roosevelt",
+        "year": 1895,
+        "gutenberg_id": 1864,
+        "body_start_marker": "GEORGE WASHINGTON",
+        "default_tradition": "American",
+        "default_section": "hero",
+    },
+    {
+        "file": "gregory-gods-fighting-men.txt",
+        "source": "Gods and Fighting Men",
+        "source_slug": "gregory-celtic",
+        "author": "Lady Gregory",
+        "year": 1904,
+        "gutenberg_id": 14465,
+        "body_start_marker": "CHAPTER I. THE FIGHT WITH THE FIRBOLGS",
+        "default_tradition": "Celtic",
+        "default_section": "hero",
+        # Strip the "CHAPTER X. " prefix from titles via a custom regex.
+        "title_pattern": r"^(?:CHAPTER\s+[IVXLC]+\.\s+|BOOK\s+[A-Z]+:\s+)?([A-Z][A-Z '\-.,]{2,80})\s*$",
+    },
+    {
+        "file": "haaren-middle-ages.txt",
+        "source": "Famous Men of the Middle Ages",
+        "source_slug": "haaren-middle-ages",
+        "author": "John H. Haaren",
+        "year": 1904,
+        "gutenberg_id": 3725,
+        "body_start_marker": "ALARIC THE VISIGOTH",
+        "default_tradition": "Medieval",
+        "default_section": "hero",
+        # Disable roman-numeral filter — Haaren chapters DO start with Roman numerals.
+        # Body lines: "I  ALARIC THE VISIGOTH" or "ALARIC THE VISIGOTH" — let's see what we hit.
+    },
+    {
         "file": "steel-english-fairy-tales.txt",
         "source": "English Fairy Tales",
         "source_slug": "steel-english",
@@ -344,6 +392,16 @@ BOOKS = [
             "THE WELL OF THE WORLD'S END",
             "THE ROSE TREE",
         ],
+        "default_section": "hero",
+        # Stories without a human protagonist of consequence — demote to fable shelf.
+        "section_overrides": {
+            "The Story of the Three Bears": "fable",
+            "Henny-penny": "fable",
+            "Titty Mouse and Tatty Mouse": "fable",
+            "The Three Little Pigs": "fable",
+            "The Old Woman and her Pig": "fable",
+            "The Wee Bannock": "fable",
+        },
     },
     {
         "file": "aesop-jones.txt",
@@ -354,6 +412,7 @@ BOOKS = [
         "gutenberg_id": 19994,
         "body_start_marker": "THE WOLF AND THE KID",
         "default_tradition": "Fable",
+        "default_section": "fable",
         "min_words": 50,  # fables are short
     },
     {

@@ -16,6 +16,8 @@ const TRADITION_VARS = {
   European: ['--t-european-1', '--t-european-2'],
   Mixed: ['--t-mixed-1', '--t-mixed-2'],
   Fable: ['--t-fable-1', '--t-fable-2'],
+  Celtic: ['--t-celtic-1', '--t-celtic-2'],
+  Medieval: ['--t-medieval-1', '--t-medieval-2'],
 };
 
 function tradStyle(tradition) {
@@ -43,7 +45,11 @@ async function loadAll() {
 }
 
 function pickRandomId() {
-  return libraryIndex[Math.floor(Math.random() * libraryIndex.length)].id;
+  // Pick from the same section as the current story (hero/fable) so "Another tale" stays on-shelf.
+  const currentMeta = libraryIndex.find(s => s.id === currentId);
+  const section = (currentMeta && currentMeta.section) || localStorage.getItem('ht-section') || 'hero';
+  const pool = libraryIndex.filter(s => (s.section || 'hero') === section);
+  return pool[Math.floor(Math.random() * pool.length)].id;
 }
 
 function showStory(id) {

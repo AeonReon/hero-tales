@@ -27,6 +27,8 @@
   --t-european-1: #44403C;--t-european-2: #78716C;
   --t-mixed-1: #57534E;   --t-mixed-2: #A8A29E;
   --t-fable-1: #65A30D;   --t-fable-2: #84CC16;
+  --t-celtic-1: #047857;  --t-celtic-2: #059669;
+  --t-medieval-1: #7C2D12;--t-medieval-2: #C2410C;
 }
 
 [hidden] { display: none !important; }
@@ -83,6 +85,49 @@ a:hover { text-decoration: underline; }
 }
 
 main { max-width: 760px; margin: 0 auto; padding: 28px 20px 80px; }
+
+/* Section tabs (hero vs fable) */
+.section-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 0 12px;
+  flex-wrap: wrap;
+}
+.section-tab {
+  position: relative;
+  padding: 12px 22px;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  cursor: pointer;
+  isolation: isolate;
+  transition: transform 0.12s ease;
+}
+.section-tab::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  padding: 2px;
+  background: linear-gradient(120deg, var(--rule), var(--rule));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.section-tab:hover { transform: translateY(-1px); }
+.section-tab.active {
+  color: white;
+  background: linear-gradient(120deg, var(--amber), var(--amber-2));
+}
+.section-tab.active::before { display: none; }
 
 .section-title {
   font-size: 13px;
