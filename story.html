@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FAF6EC">
+<title>Hero Tales</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hero Tales">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="story-page">
+
+<header class="story-header">
+  <a href="index.html" class="back-link">← Library</a>
+  <button id="campfire-toggle" class="campfire-btn" aria-pressed="false" title="Campfire mode — bigger text, fewer controls">🔥 Campfire</button>
+</header>
+
+<main class="story-main">
+  <article id="story" class="story">
+    <div class="story-tradition" id="story-tradition"></div>
+    <h1 id="story-title" class="story-title">Loading…</h1>
+    <div id="story-meta" class="story-meta"></div>
+    <div id="story-body" class="story-body"></div>
+    <div class="story-source" id="story-source"></div>
+  </article>
+
+  <div class="story-controls">
+    <button id="read-aloud" class="ctrl-btn primary">▶︎ Read aloud</button>
+    <button id="another" class="ctrl-btn">Another tale</button>
+    <a href="index.html" class="ctrl-btn ghost">Choose</a>
+  </div>
+</main>
+
+<div id="version-pill" class="version-pill"></div>
+
+<script src="assets/story.js"></script>
+</body>
+</html>

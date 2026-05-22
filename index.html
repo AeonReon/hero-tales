@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FAF6EC">
+<title>Hero Tales — Stories of greatness, for telling aloud</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hero Tales">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="library">
+
+<header class="hero">
+  <div class="hero-wrap">
+    <h1>Hero Tales</h1>
+    <p class="hero-lede">A library of short, public-domain stories of courage, cleverness, mercy, and loyalty — drawn from Greece, Rome, the North, and the English-speaking world. One- to ten-minute reads, made for telling aloud.</p>
+  </div>
+</header>
+
+<main>
+  <section class="tonight">
+    <div class="tonight-label">Tonight's tale</div>
+    <a id="tonight-card" class="tonight-card" href="#">
+      <div class="tonight-title">Loading…</div>
+      <div class="tonight-meta"></div>
+      <div class="tonight-cta">Read this one →</div>
+    </a>
+    <button id="reshuffle" class="reshuffle">Pick another</button>
+  </section>
+
+  <section class="filter-section">
+    <h2 class="section-title">Browse by tradition</h2>
+    <div id="tradition-chips" class="chip-row"></div>
+  </section>
+
+  <section class="list-section">
+    <div class="list-header">
+      <h2 class="section-title" id="list-title">All tales</h2>
+      <select id="sort-by" class="sort-select" aria-label="Sort">
+        <option value="short">Shortest first</option>
+        <option value="alpha">A → Z</option>
+        <option value="tradition">By tradition</option>
+      </select>
+    </div>
+    <ul id="story-list" class="story-list"></ul>
+  </section>
+
+  <footer class="lib-footer">
+    <p>All stories are in the public domain. Sources: James Baldwin's <em>Fifty Famous Stories Retold</em> (1896), <em>Old Greek Stories</em> (1895), and <em>Hero Tales</em> (1904), via Project Gutenberg. More collections coming.</p>
+  </footer>
+</main>
+
+<div id="version-pill" class="version-pill"></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

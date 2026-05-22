@@ -1,0 +1,54 @@
+Project: Hero Tales
+Type: Public-domain story library — short hero tales for telling aloud
+Inspiration: What the Romans and Greeks did with their children — telling great stories of courage, cleverness, mercy and loyalty to inspire greatness
+Target: Parents reading to children/teens around the campfire, at bedtime, or on a quiet evening
+
+Stack: Plain HTML/CSS/JS PWA, static deploy. No build step. No accounts. LocalStorage if needed.
+Account: AeonReon (GitHub), aeonreon team (Vercel)
+Created: 2026-05-22
+
+API keys: none required
+Contact: n/a
+
+Content sources (all US public domain, pre-1929):
+- James Baldwin — Fifty Famous Stories Retold (1896) — Gutenberg #18442 — 50 stories
+- James Baldwin — Old Greek Stories (1895) — Gutenberg #11582 — 15 stories
+- James Baldwin — Hero Tales (1904) — Gutenberg #15616 — 16 stories
+Plus, in /data/ for future parsing:
+- Aesop's Fables (V.S. Vernon Jones tr., 1912) — Gutenberg #19994
+- Bulfinch's Age of Fable — Gutenberg #4928
+- Steel — English Fairy Tales (1918) — Gutenberg #17034
+- Kingsley — The Heroes — Gutenberg #677
+- Colum — Children's Homer — Gutenberg #16018
+- Colum — Golden Fleece — Gutenberg #9368
+- Pyle — King Arthur — Gutenberg #903
+- Hawthorne — A Wonder Book for Girls and Boys — Gutenberg #32242
+
+Total v1: 81 stories.
+
+Build:
+  python3 scripts/build_library.py
+  → regenerates stories/library.json + stories/bodies.json
+
+Deploy:
+  /Users/aiautomator/Documents/Documents/WEBSITES/deploy.sh
+  (or vercel --prod from this folder)
+
+Structure:
+- /                          static PWA root (vercel serves as-is)
+- /index.html                library landing
+- /story.html                single story reader (campfire toggle)
+- /assets/style.css          warm-cream aesthetic, gradient outlines
+- /assets/app.js             library page logic
+- /assets/story.js           story page logic, TTS, campfire mode
+- /stories/library.json      story index (no bodies, for fast loading)
+- /stories/bodies.json       { id: body } map
+- /stories/baldwin-*.json    per-source intermediate files (for inspection)
+- /data/*.txt                raw Gutenberg sources (not served, kept for re-parsing)
+- /scripts/build_library.py  parser
+
+To add a new source:
+1. Drop the Gutenberg .txt into /data/
+2. Add a BOOKS entry in scripts/build_library.py with body_start_marker + allow_titles
+3. python3 scripts/build_library.py
+4. Commit + push (Vercel auto-deploys)
