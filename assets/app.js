@@ -16,6 +16,7 @@ const TRADITION_VARS = {
   American: ['--t-american-1', '--t-american-2'],
   European: ['--t-european-1', '--t-european-2'],
   Mixed:    ['--t-mixed-1', '--t-mixed-2'],
+  Fable:    ['--t-fable-1', '--t-fable-2'],
 };
 
 function tradStyle(tradition) {

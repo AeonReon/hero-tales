@@ -74,27 +74,47 @@ def parse_book(book: dict) -> list[dict]:
 
     # Locate body window
     body_start_marker = book.get("body_start_marker")
-    body_end_marker = book.get("body_end_marker", "End of Project Gutenberg")
     if not body_start_marker:
         raise ValueError(f"{book['file']}: body_start_marker required")
-    start_idx = raw.find(body_start_marker)
+    # Require the marker at the start of a line (skips indented TOC matches).
+    line_marker = "\n" + body_start_marker
+    start_idx = raw.find(line_marker)
     if start_idx < 0:
-        raise ValueError(f"{book['file']}: body_start_marker {body_start_marker!r} not found")
-    end_idx = raw.find(body_end_marker, start_idx)
-    if end_idx < 0:
-        end_idx = len(raw)
+        # Fallback: try anywhere
+        start_idx = raw.find(body_start_marker)
+        if start_idx < 0:
+            raise ValueError(f"{book['file']}: body_start_marker {body_start_marker!r} not found")
+    else:
+        start_idx += 1  # skip the leading newline
+    # End marker: try (in order) the explicit marker, the modern PG form, the older form.
+    end_candidates = []
+    if book.get("body_end_marker"):
+        end_candidates.append(book["body_end_marker"])
+    end_candidates += ["*** END OF THE PROJECT GUTENBERG", "End of Project Gutenberg"]
+    end_idx = len(raw)
+    for marker in end_candidates:
+        idx = raw.find(marker, start_idx)
+        if idx >= 0:
+            end_idx = min(end_idx, idx)
     body = raw[start_idx:end_idx]
 
     # Story title regex — defaults to a line that is ALL CAPS + spaces + apostrophes + hyphens,
     # length 3..80, optionally trailing period.
     title_pat = book.get(
         "title_pattern",
-        r"^([A-Z][A-Z '\-]{2,80}\.?)\s*$",
+        r"^([A-Z][A-Z '\-.,]{2,80})\s*$",
     )
+    # Block roman-numeral sub-headings ("I.", "II.", "III. THE KITCHEN", etc.)
+    # — these are scene markers inside larger chapters, not standalone stories.
+    roman_re = re.compile(r"^[IVX]+\.?\s*$|^[IVX]+\.\s+[A-Z]")
     title_re = re.compile(title_pat, re.MULTILINE)
 
     # Find candidate title positions
-    candidates = [(m.start(), m.end(), m.group(1).strip()) for m in title_re.finditer(body)]
+    candidates = [
+        (m.start(), m.end(), m.group(1).strip())
+        for m in title_re.finditer(body)
+        if not roman_re.match(m.group(1).strip())
+    ]
 
     # Optional title allowlist (exact ALL-CAPS forms, no trailing period). If supplied, only
     # accept candidates whose normalised form is in this set. Catches TOC entries vs body titles.
@@ -132,7 +152,12 @@ def parse_book(book: dict) -> list[dict]:
         if words < book.get("min_words", 100):
             continue
 
-        tradition = tradition_map.get(title, default_tradition)
+        # Case-insensitive lookup so His/his etc. don't break classification.
+        tradition = (
+            tradition_map.get(title)
+            or {k.lower(): v for k, v in tradition_map.items()}.get(title.lower())
+            or default_tradition
+        )
 
         stories.append({
             "id": f"{book['source_slug']}__{slugify(title)}",
@@ -266,6 +291,70 @@ BOOKS = [
             "The Wonderful Artisan",
             "The Cruel Tribute",
         ],
+    },
+    {
+        "file": "steel-english-fairy-tales.txt",
+        "source": "English Fairy Tales",
+        "source_slug": "steel-english",
+        "author": "Flora Annie Steel",
+        "year": 1918,
+        "gutenberg_id": 17034,
+        "body_start_marker": "ST. GEORGE OF MERRIE ENGLAND",
+        "default_tradition": "English",
+        "allow_titles": [
+            "ST. GEORGE OF MERRIE ENGLAND",
+            "THE STORY OF THE THREE BEARS",
+            "TOM-TIT-TOT",
+            "THE GOLDEN SNUFF-BOX",
+            "TATTERCOATS",
+            "THE THREE FEATHERS",
+            "LAZY JACK",
+            "JACK THE GIANT-KILLER",
+            "THE THREE SILLIES",
+            "THE GOLDEN BALL",
+            "THE TWO SISTERS",
+            "THE LAIDLY WORM",
+            "TITTY MOUSE AND TATTY MOUSE",
+            "JACK AND THE BEANSTALK",
+            "THE BLACK BULL OF NORROWAY",
+            "CATSKIN",
+            "THE THREE LITTLE PIGS",
+            "NIX NAUGHT NOTHING",
+            "MR. AND MRS. VINEGAR",
+            "THE TRUE HISTORY OF SIR THOMAS THUMB",
+            "HENNY-PENNY",
+            "THE THREE HEADS OF THE WELL",
+            "MR. FOX",
+            "DICK WHITTINGTON AND HIS CAT",
+            "THE OLD WOMAN AND HER PIG",
+            "THE WEE BANNOCK",
+            "HOW JACK WENT OUT TO SEEK HIS FORTUNE",
+            "THE BOGEY-BEAST",
+            "LITTLE RED RIDING-HOOD",
+            "CHILDE ROWLAND",
+            "THE WISE MEN OF GOTHAM",
+            "CAPORUSHES",
+            "THE BABES IN THE WOOD",
+            "THE RED ETTIN",
+            "THE FISH AND THE RING",
+            "LAWKAMERCYME",
+            "MASTER OF ALL MASTERS",
+            "MOLLY WHUPPIE AND THE DOUBLE-FACED GIANT",
+            "THE ASS, THE TABLE, AND THE STICK",
+            "THE WELL OF THE WORLD'S END",
+            "THE ROSE TREE",
+        ],
+    },
+    {
+        "file": "aesop-jones.txt",
+        "source": "The Aesop for Children",
+        "source_slug": "aesop",
+        "author": "Aesop",
+        "year": 1919,
+        "gutenberg_id": 19994,
+        "body_start_marker": "THE WOLF AND THE KID",
+        "default_tradition": "Fable",
+        "min_words": 50,  # fables are short
     },
     {
         "file": "baldwin-hero-tales.txt",
