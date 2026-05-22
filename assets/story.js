@@ -85,12 +85,38 @@ function showStory(id) {
   stopReading();
 }
 
-// --- read aloud (Web Speech API) ---
+// --- read aloud (via TTS module: Echo / Kokoro on Mac mini, falls back to device voice) ---
+const ENGINE_KEY = 'ht-engine';
+let engineMode = localStorage.getItem(ENGINE_KEY) || 'echo';  // 'echo' | 'web'
 let speaking = false;
 const readBtn = () => document.getElementById('read-aloud');
+const voiceBtn = () => document.getElementById('voice-toggle');
+const toastEl = () => document.getElementById('voice-toast');
+
+function reflectEngine() {
+  TTS.setEngineMode(engineMode);
+  const b = voiceBtn();
+  if (engineMode === 'echo') {
+    b.textContent = '🌐 Echo';
+    b.classList.add('echo');
+    b.title = 'Reading with Echo (Kokoro on Mac mini) — tap to switch to device voice';
+  } else {
+    b.textContent = '📱 System';
+    b.classList.remove('echo');
+    b.title = 'Reading with the device system voice — tap to switch to Echo';
+  }
+}
+
+function showToast(msg) {
+  const t = toastEl();
+  t.textContent = msg;
+  t.hidden = false;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => { t.hidden = true; }, 2200);
+}
 
 function stopReading() {
-  if ('speechSynthesis' in window) speechSynthesis.cancel();
+  TTS.stop();
   speaking = false;
   const b = readBtn();
   b.textContent = '▶︎ Read aloud';
@@ -98,41 +124,42 @@ function stopReading() {
 }
 
 function startReading() {
-  if (!('speechSynthesis' in window)) {
-    alert('Read-aloud not supported in this browser.');
-    return;
-  }
-  speechSynthesis.cancel();
+  // Build the script: title + body, with paragraph breaks preserved.
   const text = `${currentTitle}. ${currentBody}`;
-  // Break into chunks at paragraph boundaries — long single utterances are cut off on iOS.
-  const chunks = text.split(/\n{2,}/).filter(s => s.trim());
-  let i = 0;
-  const speakNext = () => {
-    if (i >= chunks.length) { stopReading(); return; }
-    const u = new SpeechSynthesisUtterance(chunks[i++]);
-    u.rate = 0.95;
-    u.pitch = 1.0;
-    // Prefer a male UK English voice when available — matches classical-mind / new-beginnings.
-    const voices = speechSynthesis.getVoices();
-    const preferred = voices.find(v => /Daniel|Google UK English Male|Oliver|Arthur|Albert/i.test(v.name))
-      || voices.find(v => /en[-_]GB/.test(v.lang))
-      || voices.find(v => /^en/.test(v.lang));
-    if (preferred) u.voice = preferred;
-    u.onend = speakNext;
-    u.onerror = stopReading;
-    speechSynthesis.speak(u);
-  };
   speaking = true;
   const b = readBtn();
-  b.textContent = '■ Stop reading';
+  b.textContent = '■ Stop';
   b.classList.add('speaking');
-  speakNext();
+
+  TTS.play(text, {
+    onStop: () => {
+      speaking = false;
+      const btn = readBtn();
+      btn.textContent = '▶︎ Read aloud';
+      btn.classList.remove('speaking');
+    },
+    onFallback: (reason) => {
+      // Echo unreachable / offline — module already switched to 'web'.
+      if (reason === 'offline') showToast('📱 Offline — using device voice');
+      else showToast('📱 Echo unreachable — using device voice');
+    },
+  });
 }
 
 document.getElementById('read-aloud').onclick = () => {
   if (speaking) stopReading();
   else startReading();
 };
+
+document.getElementById('voice-toggle').onclick = () => {
+  engineMode = engineMode === 'echo' ? 'web' : 'echo';
+  localStorage.setItem(ENGINE_KEY, engineMode);
+  reflectEngine();
+  if (speaking) stopReading();  // changing engine mid-read sounds weird; user can re-press play
+  showToast(engineMode === 'echo' ? '🌐 Echo voice' : '📱 Device voice');
+};
+
+reflectEngine();
 
 document.getElementById('another').onclick = () => {
   let next;
@@ -147,11 +174,6 @@ campfireBtn.onclick = () => {
   campfireBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
   campfireBtn.textContent = on ? '✕ Exit campfire' : '🔥 Campfire';
 };
-
-// Preload voices on Chrome
-if ('speechSynthesis' in window) {
-  speechSynthesis.onvoiceschanged = () => {}; // touch to populate
-}
 
 // Stop speech when leaving page
 window.addEventListener('beforeunload', stopReading);

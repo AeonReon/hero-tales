@@ -16,7 +16,10 @@
 
 <header class="story-header">
   <a href="index.html" class="back-link">← Library</a>
-  <button id="campfire-toggle" class="campfire-btn" aria-pressed="false" title="Campfire mode — bigger text, fewer controls">🔥 Campfire</button>
+  <div class="header-actions">
+    <button id="voice-toggle" class="voice-toggle" title="Switch reading voice">🌐 Echo</button>
+    <button id="campfire-toggle" class="campfire-btn" aria-pressed="false" title="Campfire mode — bigger text, fewer controls">🔥 Campfire</button>
+  </div>
 </header>
 
 <main class="story-main">
@@ -36,7 +39,9 @@
 </main>
 
 <div id="version-pill" class="version-pill"></div>
+<div id="voice-toast" class="voice-toast" hidden></div>
 
+<script src="assets/tts.js"></script>
 <script src="assets/story.js"></script>
 </body>
 </html>
