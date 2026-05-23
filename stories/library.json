@@ -1,19 +1,6 @@
 {
   "stories": [
     {
-      "id": "baldwin-fifty__a-laconic-answer",
-      "title": "A Laconic Answer",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "Greek",
-      "section": "hero",
-      "word_count": 267,
-      "minutes": 2,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
       "id": "aesop__a-raven-and-a-swan",
       "title": "A Raven and a Swan",
       "source": "The Aesop for Children",
@@ -53,32 +40,6 @@
       "gutenberg_id": 11582
     },
     {
-      "id": "gregory-celtic__ailne-s-revenge",
-      "title": "Ailne's Revenge",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 2430,
-      "minutes": 16,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__aine",
-      "title": "Aine",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 298,
-      "minutes": 2,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "haaren-middle-ages__alaric-the-visigoth",
       "title": "Alaric the Visigoth",
       "source": "Famous Men of the Middle Ages",
@@ -92,6 +53,19 @@
       "gutenberg_id": 3725
     },
     {
+      "id": "goodrich-ancient__alcibiades",
+      "title": "Alcibiades",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Greek",
+      "section": "hero",
+      "word_count": 1771,
+      "minutes": 12,
+      "public_domain": true,
+      "gutenberg_id": 52400
+    },
+    {
       "id": "baldwin-fifty__alexander-and-bucephalus",
       "title": "Alexander and Bucephalus",
       "source": "Fifty Famous Stories Retold",
@@ -102,7 +76,21 @@
       "word_count": 406,
       "minutes": 3,
       "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 18442,
+      "seed": true
+    },
+    {
+      "id": "goodrich-ancient__alexander-king-of-macedon",
+      "title": "Alexander, King of Macedon",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Greek",
+      "section": "hero",
+      "word_count": 6811,
+      "minutes": 45,
+      "public_domain": true,
+      "gutenberg_id": 52400
     },
     {
       "id": "haaren-middle-ages__alfred-the-great",
@@ -167,46 +155,34 @@
       "word_count": 676,
       "minutes": 5,
       "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 18442,
+      "seed": true
     },
     {
-      "id": "gregory-celtic__angus-og",
-      "title": "Angus Og",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
+      "id": "goodrich-ancient__aristides",
+      "title": "Aristides",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Greek",
       "section": "hero",
-      "word_count": 926,
-      "minutes": 6,
+      "word_count": 654,
+      "minutes": 4,
       "public_domain": true,
-      "gutenberg_id": 14465
+      "gutenberg_id": 52400
     },
     {
-      "id": "baldwin-fifty__antonio-canova",
-      "title": "Antonio Canova",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "Italian",
+      "id": "goodrich-ancient__aristotle",
+      "title": "Aristotle",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Greek",
       "section": "hero",
-      "word_count": 1022,
-      "minutes": 7,
+      "word_count": 3402,
+      "minutes": 23,
       "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
-      "id": "gregory-celtic__aoibhell",
-      "title": "Aoibhell",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 471,
-      "minutes": 3,
-      "public_domain": true,
-      "gutenberg_id": 14465
+      "gutenberg_id": 52400
     },
     {
       "id": "baldwin-fifty__arnold-winkelried",
@@ -219,7 +195,8 @@
       "word_count": 468,
       "minutes": 3,
       "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 18442,
+      "seed": true
     },
     {
       "id": "haaren-middle-ages__attila-the-hun",
@@ -233,6 +210,32 @@
       "minutes": 9,
       "public_domain": true,
       "gutenberg_id": 3725
+    },
+    {
+      "id": "goodrich-ancient__attila-king-of-the-huns",
+      "title": "Attila, King of the Huns",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Ancient",
+      "section": "hero",
+      "word_count": 1949,
+      "minutes": 13,
+      "public_domain": true,
+      "gutenberg_id": 52400
+    },
+    {
+      "id": "goodrich-ancient__belisarius",
+      "title": "Belisarius",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Roman",
+      "section": "hero",
+      "word_count": 8944,
+      "minutes": 60,
+      "public_domain": true,
+      "gutenberg_id": 52400
     },
     {
       "id": "aesop__belling-the-cat",
@@ -261,58 +264,6 @@
       "gutenberg_id": 1864
     },
     {
-      "id": "gregory-celtic__birth-of-bran",
-      "title": "Birth of Bran",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 698,
-      "minutes": 5,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__birth-of-diarmuid",
-      "title": "Birth of Diarmuid",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 874,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__black-brown-and-grey",
-      "title": "Black, Brown, and Grey",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1445,
-      "minutes": 10,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__bodb-dearg",
-      "title": "Bodb Dearg",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1689,
-      "minutes": 11,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "baldwin-fifty__bruce-and-the-spider",
       "title": "Bruce and the Spider",
       "source": "Fifty Famous Stories Retold",
@@ -323,7 +274,8 @@
       "word_count": 377,
       "minutes": 3,
       "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 18442,
+      "seed": true
     },
     {
       "id": "baldwin-old-greek__cadmus-and-europa",
@@ -339,17 +291,17 @@
       "gutenberg_id": 11582
     },
     {
-      "id": "gregory-celtic__cael-and-credhe",
-      "title": "Cael and Credhe",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
+      "id": "goodrich-ancient__caius-julius-c-sar",
+      "title": "Caius Julius Cæsar",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Roman",
       "section": "hero",
-      "word_count": 1085,
-      "minutes": 7,
+      "word_count": 3774,
+      "minutes": 25,
       "public_domain": true,
-      "gutenberg_id": 14465
+      "gutenberg_id": 52400
     },
     {
       "id": "haaren-middle-ages__canute-the-great",
@@ -389,19 +341,6 @@
       "minutes": 4,
       "public_domain": true,
       "gutenberg_id": 18442
-    },
-    {
-      "id": "gregory-celtic__cat-heads-and-dog-heads",
-      "title": "Cat-heads and Dog-heads",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1060,
-      "minutes": 7,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "steel-english__catskin",
@@ -456,17 +395,17 @@
       "gutenberg_id": 17034
     },
     {
-      "id": "gregory-celtic__cliodna-s-wave",
-      "title": "Cliodna's Wave",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
+      "id": "goodrich-ancient__cicero",
+      "title": "Cicero",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Roman",
       "section": "hero",
-      "word_count": 888,
-      "minutes": 6,
+      "word_count": 9303,
+      "minutes": 62,
       "public_domain": true,
-      "gutenberg_id": 14465
+      "gutenberg_id": 52400
     },
     {
       "id": "haaren-middle-ages__clovis",
@@ -482,17 +421,17 @@
       "gutenberg_id": 3725
     },
     {
-      "id": "gregory-celtic__conn-crither",
-      "title": "Conn Crither",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
+      "id": "goodrich-ancient__confucius",
+      "title": "Confucius",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Asian",
       "section": "hero",
-      "word_count": 714,
-      "minutes": 5,
+      "word_count": 5321,
+      "minutes": 35,
       "public_domain": true,
-      "gutenberg_id": 14465
+      "gutenberg_id": 52400
     },
     {
       "id": "baldwin-fifty__cornelia-s-jewels",
@@ -505,20 +444,8 @@
       "word_count": 507,
       "minutes": 3,
       "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
-      "id": "gregory-celtic__credhe-s-lament",
-      "title": "Credhe's Lament",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 897,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 14465
+      "gutenberg_id": 18442,
+      "seed": true
     },
     {
       "id": "baldwin-fifty__damon-and-pythias",
@@ -531,7 +458,8 @@
       "word_count": 483,
       "minutes": 3,
       "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 18442,
+      "seed": true
     },
     {
       "id": "lodge-american__daniel-boone-and-the-founding-of-kentucky",
@@ -544,33 +472,21 @@
       "word_count": 1570,
       "minutes": 10,
       "public_domain": true,
-      "gutenberg_id": 1864
+      "gutenberg_id": 1864,
+      "seed": true
     },
     {
-      "id": "gregory-celtic__death-of-bran",
-      "title": "Death of Bran",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
+      "id": "goodrich-ancient__demosthenes",
+      "title": "Demosthenes",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Greek",
       "section": "hero",
-      "word_count": 213,
-      "minutes": 1,
+      "word_count": 2886,
+      "minutes": 19,
       "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__death-of-goll",
-      "title": "Death of Goll",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 843,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 14465
+      "gutenberg_id": 52400
     },
     {
       "id": "steel-english__dick-whittington-and-his-cat",
@@ -584,45 +500,6 @@
       "minutes": 20,
       "public_domain": true,
       "gutenberg_id": 17034
-    },
-    {
-      "id": "baldwin-fifty__diogenes-the-wise-man",
-      "title": "Diogenes the Wise Man",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "Greek",
-      "section": "hero",
-      "word_count": 360,
-      "minutes": 2,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
-      "id": "baldwin-fifty__doctor-goldsmith",
-      "title": "Doctor Goldsmith",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "English",
-      "section": "hero",
-      "word_count": 284,
-      "minutes": 2,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
-      "id": "gregory-celtic__donn-son-of-midhir",
-      "title": "Donn Son of Midhir",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 3441,
-      "minutes": 23,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "haaren-middle-ages__edward-the-black-prince",
@@ -675,58 +552,6 @@
       "minutes": 28,
       "public_domain": true,
       "gutenberg_id": 1864
-    },
-    {
-      "id": "gregory-celtic__fighting-and-peace",
-      "title": "Fighting and Peace",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1185,
-      "minutes": 8,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__finn-and-the-phantoms",
-      "title": "Finn and the Phantoms",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1205,
-      "minutes": 8,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__finn-s-household",
-      "title": "Finn's Household",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1103,
-      "minutes": 7,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__finn-s-madness",
-      "title": "Finn's Madness",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 592,
-      "minutes": 4,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "lodge-american__francis-parkman",
@@ -807,19 +632,6 @@
       "gutenberg_id": 18442
     },
     {
-      "id": "gregory-celtic__glas-son-of-bremen",
-      "title": "Glas, Son of Bremen",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 686,
-      "minutes": 5,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "lodge-american__gouverneur-morris",
       "title": "Gouverneur Morris",
       "source": "Hero Tales from American History",
@@ -843,7 +655,8 @@
       "word_count": 572,
       "minutes": 4,
       "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 18442,
+      "seed": true
     },
     {
       "id": "haaren-middle-ages__gutenberg",
@@ -872,6 +685,20 @@
       "gutenberg_id": 1864
     },
     {
+      "id": "goodrich-ancient__hannibal",
+      "title": "Hannibal",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Carthaginian",
+      "section": "hero",
+      "word_count": 2907,
+      "minutes": 19,
+      "public_domain": true,
+      "gutenberg_id": 52400,
+      "seed": true
+    },
+    {
       "id": "haaren-middle-ages__harun-al-rashid",
       "title": "Harun-al-rashid",
       "source": "Famous Men of the Middle Ages",
@@ -883,19 +710,6 @@
       "minutes": 7,
       "public_domain": true,
       "gutenberg_id": 3725
-    },
-    {
-      "id": "baldwin-fifty__he-never-smiled-again",
-      "title": "He Never Smiled Again",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "English",
-      "section": "hero",
-      "word_count": 194,
-      "minutes": 1,
-      "public_domain": true,
-      "gutenberg_id": 18442
     },
     {
       "id": "steel-english__henny-penny",
@@ -963,43 +777,17 @@
       "gutenberg_id": 15616
     },
     {
-      "id": "gregory-celtic__his-call-to-bran",
-      "title": "His Call to Bran",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
+      "id": "goodrich-ancient__homer",
+      "title": "Homer",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Greek",
       "section": "hero",
-      "word_count": 1481,
-      "minutes": 10,
+      "word_count": 2257,
+      "minutes": 15,
       "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__his-call-to-connla",
-      "title": "His Call to Connla",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 784,
-      "minutes": 5,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__his-three-calls-to-cormac",
-      "title": "His Three Calls to Cormac",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 2129,
-      "minutes": 14,
-      "public_domain": true,
-      "gutenberg_id": 14465
+      "gutenberg_id": 52400
     },
     {
       "id": "baldwin-fifty__horatius-at-the-bridge",
@@ -1012,7 +800,8 @@
       "word_count": 1077,
       "minutes": 7,
       "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 18442,
+      "seed": true
     },
     {
       "id": "baldwin-hero-tales__how-apollo-came-to-parnassus",
@@ -1041,19 +830,6 @@
       "gutenberg_id": 15616
     },
     {
-      "id": "gregory-celtic__how-diarmuid-got-his-love-spot",
-      "title": "How Diarmuid Got his Love-spot",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 847,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "steel-english__how-jack-went-out-to-seek-his-fortune",
       "title": "How Jack Went Out to Seek his Fortune",
       "source": "English Fairy Tales",
@@ -1077,7 +853,8 @@
       "word_count": 231,
       "minutes": 2,
       "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 18442,
+      "seed": true
     },
     {
       "id": "baldwin-hero-tales__idun-and-her-apples",
@@ -1091,19 +868,6 @@
       "minutes": 17,
       "public_domain": true,
       "gutenberg_id": 15616
-    },
-    {
-      "id": "gregory-celtic__ilbrec-of-ess-ruadh",
-      "title": "Ilbrec of Ess Ruadh",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 3417,
-      "minutes": 23,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "baldwin-hero-tales__iphigenia",
@@ -1155,7 +919,8 @@
       "word_count": 1268,
       "minutes": 8,
       "public_domain": true,
-      "gutenberg_id": 3725
+      "gutenberg_id": 3725,
+      "seed": true
     },
     {
       "id": "lodge-american__john-quincy-adams-and-the-right-of-petition",
@@ -1169,19 +934,6 @@
       "minutes": 10,
       "public_domain": true,
       "gutenberg_id": 1864
-    },
-    {
-      "id": "baldwin-old-greek__jupiter-and-his-mighty-company",
-      "title": "Jupiter and his Mighty Company",
-      "source": "Old Greek Stories",
-      "author": "James Baldwin",
-      "year": 1895,
-      "tradition": "Greek",
-      "section": "hero",
-      "word_count": 587,
-      "minutes": 4,
-      "public_domain": true,
-      "gutenberg_id": 11582
     },
     {
       "id": "aesop__jupiter-and-the-monkey",
@@ -1249,19 +1001,6 @@
       "gutenberg_id": 18442
     },
     {
-      "id": "baldwin-fifty__king-john-and-the-abbot",
-      "title": "King John and the Abbot",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "English",
-      "section": "hero",
-      "word_count": 1230,
-      "minutes": 8,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
       "id": "lodge-american__king-s-mountain",
       "title": "King's Mountain",
       "source": "Hero Tales from American History",
@@ -1272,33 +1011,8 @@
       "word_count": 1415,
       "minutes": 9,
       "public_domain": true,
-      "gutenberg_id": 1864
-    },
-    {
-      "id": "gregory-celtic__labran-s-journey",
-      "title": "Labran's Journey",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 969,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__laegaire-in-the-happy-plain",
-      "title": "Laegaire in the Happy Plain",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1225,
-      "minutes": 8,
-      "public_domain": true,
-      "gutenberg_id": 14465
+      "gutenberg_id": 1864,
+      "seed": true
     },
     {
       "id": "steel-english__lazy-jack",
@@ -1340,19 +1054,6 @@
       "gutenberg_id": 17034
     },
     {
-      "id": "gregory-celtic__lomna-s-head",
-      "title": "Lomna's Head",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 504,
-      "minutes": 3,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "haaren-middle-ages__louis-the-ninth",
       "title": "Louis the Ninth",
       "source": "Famous Men of the Middle Ages",
@@ -1366,30 +1067,17 @@
       "gutenberg_id": 3725
     },
     {
-      "id": "gregory-celtic__manannan",
-      "title": "Manannan",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
+      "id": "goodrich-ancient__lycurgus",
+      "title": "Lycurgus",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Spartan",
       "section": "hero",
-      "word_count": 1237,
-      "minutes": 8,
+      "word_count": 942,
+      "minutes": 6,
       "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__manannan-at-play",
-      "title": "Manannan at Play",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 2287,
-      "minutes": 15,
-      "public_domain": true,
-      "gutenberg_id": 14465
+      "gutenberg_id": 52400
     },
     {
       "id": "haaren-middle-ages__marco-polo",
@@ -1418,32 +1106,6 @@
       "gutenberg_id": 17034
     },
     {
-      "id": "baldwin-fifty__maximilian-and-the-goose-boy",
-      "title": "Maximilian and the Goose Boy",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "European",
-      "section": "hero",
-      "word_count": 904,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
-      "id": "gregory-celtic__meargach-s-wife",
-      "title": "Meargach's Wife",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 2228,
-      "minutes": 15,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "aesop__mercury-and-the-woodman",
       "title": "Mercury and the Woodman",
       "source": "The Aesop for Children",
@@ -1457,30 +1119,17 @@
       "gutenberg_id": 19994
     },
     {
-      "id": "gregory-celtic__midhir-and-etain",
-      "title": "Midhir and Etain",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
+      "id": "goodrich-ancient__mohammed",
+      "title": "Mohammed",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Arabian",
       "section": "hero",
-      "word_count": 4472,
+      "word_count": 4518,
       "minutes": 30,
       "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "baldwin-fifty__mignon",
-      "title": "Mignon",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "European",
-      "section": "hero",
-      "word_count": 992,
-      "minutes": 7,
-      "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 52400
     },
     {
       "id": "haaren-middle-ages__mohammed",
@@ -1548,19 +1197,6 @@
       "gutenberg_id": 17034
     },
     {
-      "id": "gregory-celtic__notes",
-      "title": "Notes",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 3177,
-      "minutes": 21,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "baldwin-hero-tales__ogier-the-dane-and-the-fairies",
       "title": "Ogier the Dane and the Fairies",
       "source": "Hero Tales",
@@ -1572,97 +1208,6 @@
       "minutes": 5,
       "public_domain": true,
       "gutenberg_id": 15616
-    },
-    {
-      "id": "gregory-celtic__oisin-and-patrick-and-oisin-s-laments",
-      "title": "Oisin and Patrick, and Oisin's Laments.--",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1158,
-      "minutes": 8,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__oisin-in-patrick-s-house",
-      "title": "Oisin in Patrick's House",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1194,
-      "minutes": 8,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__oisin-s-children",
-      "title": "Oisin's Children",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1825,
-      "minutes": 12,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__oisin-s-laments",
-      "title": "Oisin's Laments",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1336,
-      "minutes": 9,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__oisin-s-mother",
-      "title": "Oisin's Mother",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1485,
-      "minutes": 10,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__oisin-s-story",
-      "title": "Oisin's Story",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 2040,
-      "minutes": 14,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "baldwin-fifty__other-wise-men-of-gotham",
-      "title": "Other Wise Men of Gotham",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "English",
-      "section": "hero",
-      "word_count": 923,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 18442
     },
     {
       "id": "baldwin-hero-tales__paris-and-helen",
@@ -1678,6 +1223,19 @@
       "gutenberg_id": 15616
     },
     {
+      "id": "goodrich-ancient__pericles",
+      "title": "Pericles",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Greek",
+      "section": "hero",
+      "word_count": 933,
+      "minutes": 6,
+      "public_domain": true,
+      "gutenberg_id": 52400
+    },
+    {
       "id": "haaren-middle-ages__peter-the-hermit",
       "title": "Peter the Hermit",
       "source": "Famous Men of the Middle Ages",
@@ -1691,17 +1249,17 @@
       "gutenberg_id": 3725
     },
     {
-      "id": "baldwin-fifty__picciola",
-      "title": "Picciola",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "French",
+      "id": "goodrich-ancient__plato",
+      "title": "Plato",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Greek",
       "section": "hero",
-      "word_count": 1051,
-      "minutes": 7,
+      "word_count": 2641,
+      "minutes": 18,
       "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 52400
     },
     {
       "id": "baldwin-fifty__pocahontas",
@@ -1714,20 +1272,8 @@
       "word_count": 318,
       "minutes": 2,
       "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
-      "id": "gregory-celtic__red-ridge",
-      "title": "Red Ridge",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 329,
-      "minutes": 2,
-      "public_domain": true,
-      "gutenberg_id": 14465
+      "gutenberg_id": 18442,
+      "seed": true
     },
     {
       "id": "haaren-middle-ages__robert-bruce",
@@ -1821,17 +1367,30 @@
       "gutenberg_id": 18442
     },
     {
-      "id": "baldwin-fifty__socrates-and-his-house",
-      "title": "Socrates and his House",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
+      "id": "goodrich-ancient__socrates",
+      "title": "Socrates",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
       "tradition": "Greek",
       "section": "hero",
-      "word_count": 131,
-      "minutes": 1,
+      "word_count": 3862,
+      "minutes": 26,
       "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 52400
+    },
+    {
+      "id": "goodrich-ancient__solon",
+      "title": "Solon",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Greek",
+      "section": "hero",
+      "word_count": 1309,
+      "minutes": 9,
+      "public_domain": true,
+      "gutenberg_id": 52400
     },
     {
       "id": "steel-english__st-george-of-merrie-england",
@@ -1845,32 +1404,6 @@
       "minutes": 26,
       "public_domain": true,
       "gutenberg_id": 17034
-    },
-    {
-      "id": "gregory-celtic__tadg-in-manannan-s-islands",
-      "title": "Tadg in Manannan's Islands",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 3352,
-      "minutes": 22,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__tailc-son-of-treon",
-      "title": "Tailc, Son of Treon",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1102,
-      "minutes": 7,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "haaren-middle-ages__tamerlane",
@@ -1949,19 +1482,6 @@
       "minutes": 1,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "gregory-celtic__the-arguments",
-      "title": "The Arguments",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 3624,
-      "minutes": 24,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "aesop__the-ass-and-his-driver",
@@ -2094,19 +1614,6 @@
       "gutenberg_id": 19994
     },
     {
-      "id": "baldwin-fifty__the-barmecide-feast",
-      "title": "The Barmecide Feast",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "Arabian",
-      "section": "hero",
-      "word_count": 747,
-      "minutes": 5,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
       "id": "aesop__the-bat-and-the-weasels",
       "title": "The Bat and the Weasels",
       "source": "The Aesop for Children",
@@ -2118,19 +1625,6 @@
       "minutes": 1,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "gregory-celtic__the-battle-of-gabhra",
-      "title": "The Battle of Gabhra",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1933,
-      "minutes": 13,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "lodge-american__the-battle-of-new-orleans",
@@ -2146,19 +1640,6 @@
       "gutenberg_id": 1864
     },
     {
-      "id": "gregory-celtic__the-battle-of-tailltin",
-      "title": "The Battle of Tailltin",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 822,
-      "minutes": 5,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "lodge-american__the-battle-of-trenton",
       "title": "The Battle of Trenton",
       "source": "Hero Tales from American History",
@@ -2169,7 +1650,8 @@
       "word_count": 1968,
       "minutes": 13,
       "public_domain": true,
-      "gutenberg_id": 1864
+      "gutenberg_id": 1864,
+      "seed": true
     },
     {
       "id": "aesop__the-bear-and-the-bees",
@@ -2196,32 +1678,6 @@
       "minutes": 2,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "baldwin-fifty__the-bell-of-atri",
-      "title": "The Bell of Atri",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "Italian",
-      "section": "hero",
-      "word_count": 1295,
-      "minutes": 9,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
-      "id": "gregory-celtic__the-best-men-of-the-fianna",
-      "title": "The Best Men of the Fianna",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 3096,
-      "minutes": 21,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "aesop__the-birds-the-beasts-and-the-bat",
@@ -2261,32 +1717,6 @@
       "minutes": 4,
       "public_domain": true,
       "gutenberg_id": 18442
-    },
-    {
-      "id": "baldwin-fifty__the-blind-men-and-the-elephant",
-      "title": "The Blind Men and the Elephant",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "Asian",
-      "section": "hero",
-      "word_count": 412,
-      "minutes": 3,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
-      "id": "gregory-celtic__the-boar-of-beinn-gulbain",
-      "title": "The Boar of Beinn Gulbain",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 3988,
-      "minutes": 27,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "steel-english__the-bogey-beast",
@@ -2351,7 +1781,8 @@
       "word_count": 400,
       "minutes": 3,
       "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 18442,
+      "seed": true
     },
     {
       "id": "aesop__the-bull-and-the-goat",
@@ -2378,19 +1809,6 @@
       "minutes": 1,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "gregory-celtic__the-call-of-oisin",
-      "title": "The Call of Oisin",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1012,
-      "minutes": 7,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "aesop__the-cat-and-the-birds",
@@ -2445,32 +1863,6 @@
       "gutenberg_id": 19994
     },
     {
-      "id": "gregory-celtic__the-cave-of-ceiscoran",
-      "title": "The Cave of Ceiscoran",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 855,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-cave-of-cruachan",
-      "title": "The Cave of Cruachan",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 861,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "lodge-american__the-charge-at-gettysburg",
       "title": "The Charge at Gettysburg",
       "source": "Hero Tales from American History",
@@ -2494,7 +1886,8 @@
       "word_count": 656,
       "minutes": 4,
       "public_domain": true,
-      "gutenberg_id": 15616
+      "gutenberg_id": 15616,
+      "seed": true
     },
     {
       "id": "haaren-middle-ages__the-cid",
@@ -2536,32 +1929,6 @@
       "gutenberg_id": 19994
     },
     {
-      "id": "gregory-celtic__the-coming-of-finn",
-      "title": "The Coming of Finn",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 3535,
-      "minutes": 24,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-coming-of-lugh",
-      "title": "The Coming of Lugh",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 3156,
-      "minutes": 21,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "aesop__the-crow-and-the-pitcher",
       "title": "The Crow and the Pitcher",
       "source": "The Aesop for Children",
@@ -2586,32 +1953,6 @@
       "minutes": 21,
       "public_domain": true,
       "gutenberg_id": 11582
-    },
-    {
-      "id": "gregory-celtic__the-dagda",
-      "title": "The Dagda",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1279,
-      "minutes": 9,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-daughter-of-king-under-wave",
-      "title": "The Daughter of King Under-wave",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 3017,
-      "minutes": 20,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "lodge-american__the-death-of-stonewall-jackson",
@@ -2770,32 +2111,6 @@
       "gutenberg_id": 19994
     },
     {
-      "id": "baldwin-fifty__the-endless-tale",
-      "title": "The Endless Tale",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "Asian",
-      "section": "hero",
-      "word_count": 646,
-      "minutes": 4,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
-      "id": "gregory-celtic__the-enemies-of-ireland",
-      "title": "The Enemies of Ireland",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 457,
-      "minutes": 3,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "aesop__the-farmer-and-his-sons",
       "title": "The Farmer and his Sons",
       "source": "The Aesop for Children",
@@ -2848,32 +2163,6 @@
       "gutenberg_id": 19994
     },
     {
-      "id": "gregory-celtic__the-fate-of-the-children-of-lir",
-      "title": "The Fate of the Children of Lir",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 6424,
-      "minutes": 43,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-fight-with-the-firbolgs",
-      "title": "The Fight with the Firbolgs",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 2271,
-      "minutes": 15,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "aesop__the-fighting-bulls-and-the-frog",
       "title": "The Fighting Bulls and the Frog",
       "source": "The Aesop for Children",
@@ -2898,19 +2187,6 @@
       "minutes": 1,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "gregory-celtic__the-first-fighters",
-      "title": "The First Fighters",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1794,
-      "minutes": 12,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "steel-english__the-fish-and-the-ring",
@@ -2963,32 +2239,6 @@
       "minutes": 1,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "gregory-celtic__the-flight-from-teamhair",
-      "title": "The Flight from Teamhair",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 2533,
-      "minutes": 17,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "baldwin-old-greek__the-flood",
-      "title": "The Flood",
-      "source": "Old Greek Stories",
-      "author": "James Baldwin",
-      "year": 1895,
-      "tradition": "Greek",
-      "section": "hero",
-      "word_count": 1135,
-      "minutes": 8,
-      "public_domain": true,
-      "gutenberg_id": 11582
     },
     {
       "id": "baldwin-hero-tales__the-forging-of-balmung",
@@ -3225,19 +2475,6 @@
       "gutenberg_id": 19994
     },
     {
-      "id": "baldwin-old-greek__the-golden-age",
-      "title": "The Golden Age",
-      "source": "Old Greek Stories",
-      "author": "James Baldwin",
-      "year": 1895,
-      "tradition": "Greek",
-      "section": "hero",
-      "word_count": 856,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 11582
-    },
-    {
       "id": "baldwin-hero-tales__the-golden-apple",
       "title": "The Golden Apple",
       "source": "Hero Tales",
@@ -3290,58 +2527,6 @@
       "gutenberg_id": 19994
     },
     {
-      "id": "gregory-celtic__the-great-battle-of-magh-tuireadh",
-      "title": "The Great Battle of Magh Tuireadh",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 4067,
-      "minutes": 27,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-great-fight",
-      "title": "The Great Fight",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 2702,
-      "minutes": 18,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-green-champions",
-      "title": "The Green Champions",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 3779,
-      "minutes": 25,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-hard-servant",
-      "title": "The Hard Servant",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 4652,
-      "minutes": 31,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "aesop__the-hare-and-his-ears",
       "title": "The Hare and his Ears",
       "source": "The Aesop for Children",
@@ -3381,19 +2566,6 @@
       "gutenberg_id": 19994
     },
     {
-      "id": "gregory-celtic__the-help-of-the-men-of-dea",
-      "title": "The Help of the Men of Dea",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1156,
-      "minutes": 8,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "aesop__the-heron",
       "title": "The Heron",
       "source": "The Aesop for Children",
@@ -3405,32 +2577,6 @@
       "minutes": 3,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "gregory-celtic__the-hidden-house-of-lugh",
-      "title": "The Hidden House of Lugh",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 865,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-high-king-s-son",
-      "title": "The High King's Son",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 994,
-      "minutes": 7,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "baldwin-hero-tales__the-hoard-of-the-elves",
@@ -3459,45 +2605,6 @@
       "gutenberg_id": 11582
     },
     {
-      "id": "gregory-celtic__the-hospitality-of-cuanna-s-house",
-      "title": "The Hospitality of Cuanna's House",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1340,
-      "minutes": 9,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-hound",
-      "title": "The Hound",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 2471,
-      "minutes": 16,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-house-of-the-quicken-trees",
-      "title": "The House of the Quicken Trees",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 692,
-      "minutes": 5,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "baldwin-hero-tales__the-hunt-in-the-wood-of-calydon",
       "title": "The Hunt in the Wood of Calydon",
       "source": "Hero Tales",
@@ -3524,32 +2631,6 @@
       "gutenberg_id": 15616
     },
     {
-      "id": "gregory-celtic__the-hunt-of-slieve-cuilinn",
-      "title": "The Hunt of Slieve Cuilinn",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1230,
-      "minutes": 8,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "baldwin-fifty__the-inchcape-rock",
-      "title": "The Inchcape Rock",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "Scottish",
-      "section": "hero",
-      "word_count": 659,
-      "minutes": 4,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
       "id": "aesop__the-kid-and-the-wolf",
       "title": "The Kid and the Wolf",
       "source": "The Aesop for Children",
@@ -3561,84 +2642,6 @@
       "minutes": 1,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "baldwin-fifty__the-king-and-his-hawk",
-      "title": "The King and his Hawk",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "Asian",
-      "section": "hero",
-      "word_count": 862,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
-      "id": "gregory-celtic__the-king-of-britain-s-son",
-      "title": "The King of Britain's Son",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 966,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-king-of-lochlann-and-his-sons",
-      "title": "The King of Lochlann and his Sons",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1640,
-      "minutes": 11,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-king-of-ulster-s-son",
-      "title": "The King of Ulster's Son",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 928,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "baldwin-fifty__the-kingdoms",
-      "title": "The Kingdoms",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "Greek",
-      "section": "hero",
-      "word_count": 549,
-      "minutes": 4,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
-      "id": "gregory-celtic__the-lad-of-the-skins",
-      "title": "The Lad of the Skins",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1758,
-      "minutes": 12,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "steel-english__the-laidly-worm",
@@ -3654,19 +2657,6 @@
       "gutenberg_id": 17034
     },
     {
-      "id": "gregory-celtic__the-landing",
-      "title": "The Landing",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1687,
-      "minutes": 11,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "aesop__the-lark-and-her-young-ones",
       "title": "The Lark and her Young Ones",
       "source": "The Aesop for Children",
@@ -3678,19 +2668,6 @@
       "minutes": 2,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "gregory-celtic__the-last-of-the-great-men",
-      "title": "The Last of the Great Men",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 980,
-      "minutes": 7,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "aesop__the-leap-at-rhodes",
@@ -3823,19 +2800,6 @@
       "gutenberg_id": 19994
     },
     {
-      "id": "gregory-celtic__the-march-of-the-fianna",
-      "title": "The March of the Fianna",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 507,
-      "minutes": 3,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "aesop__the-mice-and-the-weasels",
       "title": "The Mice and the Weasels",
       "source": "The Aesop for Children",
@@ -3860,19 +2824,6 @@
       "minutes": 1,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "baldwin-fifty__the-miller-of-the-dee",
-      "title": "The Miller of the Dee",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "English",
-      "section": "hero",
-      "word_count": 390,
-      "minutes": 3,
-      "public_domain": true,
-      "gutenberg_id": 18442
     },
     {
       "id": "aesop__the-miller-his-son-and-the-ass",
@@ -3964,19 +2915,6 @@
       "minutes": 2,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "gregory-celtic__the-morrigu",
-      "title": "The Morrigu",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 707,
-      "minutes": 5,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "aesop__the-mother-and-the-wolf",
@@ -4135,19 +3073,6 @@
       "gutenberg_id": 19994
     },
     {
-      "id": "gregory-celtic__the-pigs-of-angus",
-      "title": "The Pigs of Angus",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1315,
-      "minutes": 9,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "aesop__the-plane-tree",
       "title": "The Plane Tree",
       "source": "The Aesop for Children",
@@ -4174,19 +3099,6 @@
       "gutenberg_id": 19994
     },
     {
-      "id": "gregory-celtic__the-pursuit",
-      "title": "The Pursuit",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 2152,
-      "minutes": 14,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "aesop__the-quack-toad",
       "title": "The Quack Toad",
       "source": "The Aesop for Children",
@@ -4198,32 +3110,6 @@
       "minutes": 1,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "gregory-celtic__the-quarrel",
-      "title": "The Quarrel",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1132,
-      "minutes": 8,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-quarrel-with-the-sons-of-morna",
-      "title": "The Quarrel with the Sons of Morna",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 2251,
-      "minutes": 15,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "baldwin-old-greek__the-quest-of-medusa-s-head",
@@ -4278,32 +3164,6 @@
       "gutenberg_id": 17034
     },
     {
-      "id": "gregory-celtic__the-red-woman",
-      "title": "The Red Woman",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1883,
-      "minutes": 13,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-reign-of-bres",
-      "title": "The Reign of Bres",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 2588,
-      "minutes": 17,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "aesop__the-rose-and-the-butterfly",
       "title": "The Rose and the Butterfly",
       "source": "The Aesop for Children",
@@ -4341,19 +3201,6 @@
       "minutes": 1,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "gregory-celtic__the-shadowy-one",
-      "title": "The Shadowy One",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 358,
-      "minutes": 2,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "aesop__the-sheep-and-the-pig",
@@ -4406,32 +3253,6 @@
       "minutes": 1,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "gregory-celtic__the-sons-of-tuireann",
-      "title": "The Sons of Tuireann",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 9444,
-      "minutes": 63,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "baldwin-fifty__the-sons-of-william-the-conqueror",
-      "title": "The Sons of William the Conqueror",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "English",
-      "section": "hero",
-      "word_count": 865,
-      "minutes": 6,
-      "public_domain": true,
-      "gutenberg_id": 18442
     },
     {
       "id": "aesop__the-spendthrift-and-the-swallow",
@@ -4509,20 +3330,8 @@
       "word_count": 1005,
       "minutes": 7,
       "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
-      "id": "baldwin-old-greek__the-story-of-io",
-      "title": "The Story of Io",
-      "source": "Old Greek Stories",
-      "author": "James Baldwin",
-      "year": 1895,
-      "tradition": "Greek",
-      "section": "hero",
-      "word_count": 1691,
-      "minutes": 11,
-      "public_domain": true,
-      "gutenberg_id": 11582
+      "gutenberg_id": 18442,
+      "seed": true
     },
     {
       "id": "baldwin-old-greek__the-story-of-prometheus",
@@ -4548,7 +3357,8 @@
       "word_count": 657,
       "minutes": 4,
       "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 18442,
+      "seed": true
     },
     {
       "id": "steel-english__the-story-of-the-three-bears",
@@ -4574,7 +3384,8 @@
       "word_count": 442,
       "minutes": 3,
       "public_domain": true,
-      "gutenberg_id": 18442
+      "gutenberg_id": 18442,
+      "seed": true
     },
     {
       "id": "aesop__the-swallow-and-the-crow",
@@ -4588,19 +3399,6 @@
       "minutes": 1,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "baldwin-fifty__the-sword-of-damocles",
-      "title": "The Sword of Damocles",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "Greek",
-      "section": "hero",
-      "word_count": 484,
-      "minutes": 3,
-      "public_domain": true,
-      "gutenberg_id": 18442
     },
     {
       "id": "steel-english__the-three-feathers",
@@ -4759,32 +3557,6 @@
       "gutenberg_id": 17034
     },
     {
-      "id": "baldwin-fifty__the-ungrateful-guest",
-      "title": "The Ungrateful Guest",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "Greek",
-      "section": "hero",
-      "word_count": 358,
-      "minutes": 2,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
-      "id": "baldwin-fifty__the-ungrateful-soldier",
-      "title": "The Ungrateful Soldier",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "European",
-      "section": "hero",
-      "word_count": 335,
-      "minutes": 2,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
       "id": "aesop__the-vain-jackdaw-and-his-borrowed-feathers",
       "title": "The Vain Jackdaw and his Borrowed Feathers",
       "source": "The Aesop for Children",
@@ -4796,32 +3568,6 @@
       "minutes": 1,
       "public_domain": true,
       "gutenberg_id": 19994
-    },
-    {
-      "id": "gregory-celtic__the-wanderers",
-      "title": "The Wanderers",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 1311,
-      "minutes": 9,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
-      "id": "gregory-celtic__the-wedding-at-ceann-slieve",
-      "title": "The Wedding at Ceann Slieve",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 2888,
-      "minutes": 19,
-      "public_domain": true,
-      "gutenberg_id": 14465
     },
     {
       "id": "steel-english__the-wee-bannock",
@@ -4848,19 +3594,6 @@
       "minutes": 7,
       "public_domain": true,
       "gutenberg_id": 17034
-    },
-    {
-      "id": "baldwin-fifty__the-white-ship",
-      "title": "The White Ship",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "English",
-      "section": "hero",
-      "word_count": 590,
-      "minutes": 4,
-      "public_domain": true,
-      "gutenberg_id": 18442
     },
     {
       "id": "aesop__the-wild-boar-and-the-fox",
@@ -5084,32 +3817,6 @@
       "gutenberg_id": 11582
     },
     {
-      "id": "baldwin-old-greek__the-wonderful-weaver",
-      "title": "The Wonderful Weaver",
-      "source": "Old Greek Stories",
-      "author": "James Baldwin",
-      "year": 1895,
-      "tradition": "Greek",
-      "section": "hero",
-      "word_count": 1108,
-      "minutes": 7,
-      "public_domain": true,
-      "gutenberg_id": 11582
-    },
-    {
-      "id": "gregory-celtic__the-wood-of-dubhros",
-      "title": "The Wood of Dubhros",
-      "source": "Gods and Fighting Men",
-      "author": "Lady Gregory",
-      "year": 1904,
-      "tradition": "Celtic",
-      "section": "hero",
-      "word_count": 4561,
-      "minutes": 30,
-      "public_domain": true,
-      "gutenberg_id": 14465
-    },
-    {
       "id": "aesop__the-young-crab-and-his-mother",
       "title": "The Young Crab and his Mother",
       "source": "The Aesop for Children",
@@ -5149,19 +3856,6 @@
       "gutenberg_id": 19994
     },
     {
-      "id": "baldwin-fifty__three-men-of-gotham",
-      "title": "Three Men of Gotham",
-      "source": "Fifty Famous Stories Retold",
-      "author": "James Baldwin",
-      "year": 1896,
-      "tradition": "English",
-      "section": "hero",
-      "word_count": 342,
-      "minutes": 2,
-      "public_domain": true,
-      "gutenberg_id": 18442
-    },
-    {
       "id": "steel-english__titty-mouse-and-tatty-mouse",
       "title": "Titty Mouse and Tatty Mouse",
       "source": "English Fairy Tales",
@@ -5199,6 +3893,19 @@
       "minutes": 1,
       "public_domain": true,
       "gutenberg_id": 19994
+    },
+    {
+      "id": "goodrich-ancient__virgil",
+      "title": "Virgil",
+      "source": "Famous Men of Ancient Times",
+      "author": "Samuel G. Goodrich",
+      "year": 1856,
+      "tradition": "Roman",
+      "section": "hero",
+      "word_count": 2886,
+      "minutes": 19,
+      "public_domain": true,
+      "gutenberg_id": 52400
     },
     {
       "id": "haaren-middle-ages__warwick-the-kingmaker",
@@ -5266,5 +3973,5 @@
       "gutenberg_id": 3725
     }
   ],
-  "count": 405
+  "count": 304
 }

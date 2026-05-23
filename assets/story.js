@@ -81,9 +81,36 @@ function showStory(id) {
   document.getElementById('story-source').textContent =
     `From ${meta.source} by ${meta.author} (${meta.year}) · public domain via Project Gutenberg`;
 
+  renderVerdict(meta);
+
   window.scrollTo({ top: 0, behavior: 'instant' });
   stopReading();
 }
+
+function renderVerdict(meta) {
+  const block = document.getElementById('story-verdict');
+  if (!meta.seed) { block.hidden = true; return; }
+  block.hidden = false;
+  const verdicts = JSON.parse(localStorage.getItem('ht-verdicts') || '{}');
+  const v = verdicts[meta.id];
+  block.classList.toggle('given', !!v);
+  block.classList.toggle('disapproved', v === 'disapprove');
+  const label = document.querySelector('.story-verdict-label');
+  if (v === 'approve') label.textContent = '✓ Approved. Change your mind?';
+  else if (v === 'disapprove') label.textContent = '✗ Disapproved. Change your mind?';
+  else label.textContent = "Does this match what you're after — bravery, courage, daring greatness?";
+}
+
+function recordVerdict(verdict) {
+  const verdicts = JSON.parse(localStorage.getItem('ht-verdicts') || '{}');
+  verdicts[currentId] = verdict;
+  localStorage.setItem('ht-verdicts', JSON.stringify(verdicts));
+  const meta = libraryIndex.find(s => s.id === currentId);
+  if (meta) renderVerdict(meta);
+}
+
+document.getElementById('vt-approve')?.addEventListener('click', () => recordVerdict('approve'));
+document.getElementById('vt-disapprove')?.addEventListener('click', () => recordVerdict('disapprove'));
 
 // --- read aloud (via TTS module: Echo / Kokoro on Mac mini, falls back to device voice) ---
 const ENGINE_KEY = 'ht-engine';

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FAF6EC">
+<title>Curate — Hero Tales</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hero Tales">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="story-page">
+
+<header class="story-header">
+  <a href="index.html" class="back-link">← Library</a>
+  <div class="header-actions">
+    <span id="curate-progress" class="curate-progress">0 / 20</span>
+    <button id="voice-toggle" class="voice-toggle" title="Switch reading voice">🌐 Echo</button>
+  </div>
+</header>
+
+<main class="story-main" id="curate-main">
+
+  <!-- Active story view -->
+  <article id="story" class="story" hidden>
+    <div class="story-tradition" id="story-tradition"></div>
+    <h1 id="story-title" class="story-title"></h1>
+    <div id="story-meta" class="story-meta"></div>
+    <div id="story-body" class="story-body"></div>
+    <div class="story-source" id="story-source"></div>
+
+    <div class="curate-controls">
+      <button id="btn-disapprove" class="ctrl-btn disapprove" title="Doesn't match — too weak, too weird, too fragmentary, or otherwise off-brief">✗ Disapprove</button>
+      <button id="btn-read-aloud" class="ctrl-btn primary">▶︎ Read aloud</button>
+      <button id="btn-approve" class="ctrl-btn approve" title="Matches the bravery-greatness template — keep this on the shelf">✓ Approve</button>
+    </div>
+    <p class="curate-hint">Listen or read, then judge. <strong>Approve</strong> if it's the kind of tale you'd actually tell around a campfire to inspire greatness. <strong>Disapprove</strong> otherwise. You can change your mind later.</p>
+  </article>
+
+  <!-- All-done view -->
+  <section id="done" class="done-view" hidden>
+    <h1>All twenty graded.</h1>
+    <p class="done-summary">
+      <span class="tally-pill approve">✓ <span id="tally-approve">0</span> approved</span>
+      <span class="tally-pill disapprove">✗ <span id="tally-disapprove">0</span> disapproved</span>
+    </p>
+    <p class="done-lede">From your verdicts I'll grow the next batch with stories that match the pattern of what you approved.</p>
+
+    <div class="done-actions">
+      <button id="btn-export" class="ctrl-btn primary">📋 Copy verdicts</button>
+      <button id="btn-share" class="ctrl-btn">📤 Share to file-share</button>
+      <button id="btn-restart" class="ctrl-btn ghost">↻ Review again</button>
+    </div>
+
+    <details class="done-detail">
+      <summary>See your verdicts</summary>
+      <ul id="verdict-list" class="verdict-list"></ul>
+    </details>
+  </section>
+
+  <!-- Empty/loading -->
+  <p id="curate-loading" class="story-meta" style="text-align:center; padding: 60px 20px;">Loading…</p>
+
+</main>
+
+<div id="version-pill" class="version-pill"></div>
+<div id="voice-toast" class="voice-toast" hidden></div>
+
+<script src="assets/tts.js"></script>
+<script src="assets/curate.js"></script>
+</body>
+</html>

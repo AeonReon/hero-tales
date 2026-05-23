@@ -264,6 +264,35 @@ BALDWIN_HERO_TRADITION = {
 }
 
 
+# The curated SEED — 20 stories. The user grades each as Approve / Disapprove via the
+# Curate flow; their verdicts shape the bar for what stays on the hero shelf going forward.
+# Picks: iconic, single-deed, mostly short reads, mix of traditions, mix of moment-types
+# (single hero, civilisational, daring-vision). Per user feedback the Horatius template is
+# the gold standard.
+SEED_IDS = {
+    "baldwin-fifty__horatius-at-the-bridge",
+    "baldwin-fifty__the-brave-three-hundred",
+    "baldwin-fifty__damon-and-pythias",
+    "baldwin-fifty__the-story-of-cincinnatus",
+    "baldwin-fifty__the-story-of-regulus",
+    "baldwin-fifty__bruce-and-the-spider",
+    "baldwin-fifty__the-story-of-william-tell",
+    "baldwin-fifty__arnold-winkelried",
+    "baldwin-fifty__cornelia-s-jewels",
+    "baldwin-fifty__alexander-and-bucephalus",
+    "baldwin-fifty__androclus-and-the-lion",
+    "baldwin-fifty__how-napoleon-crossed-the-alps",
+    "baldwin-fifty__grace-darling",
+    "baldwin-fifty__pocahontas",
+    "goodrich-ancient__hannibal",
+    "baldwin-hero-tales__the-choice-of-hercules",
+    "lodge-american__the-battle-of-trenton",
+    "lodge-american__daniel-boone-and-the-founding-of-kentucky",
+    "lodge-american__king-s-mountain",
+    "haaren-middle-ages__joan-of-arc",
+}
+
+
 BOOKS = [
     {
         "file": "baldwin-fifty.txt",
@@ -275,6 +304,36 @@ BOOKS = [
         "body_start_marker": "KING ALFRED AND THE CAKES.",
         "tradition_map": BALDWIN_FIFTY_TRADITION,
         "default_tradition": "Mixed",
+        "default_section": "hero",
+        # Hidden: wisdom anecdotes, parables, sad vignettes, succession quarrels —
+        # not the daring-greatness template the user is after.
+        "section_overrides": {
+            "Diogenes the Wise Man": "hidden",
+            "Socrates and His House": "hidden",
+            "The Miller of the Dee": "hidden",
+            "Three Men of Gotham": "hidden",
+            "Other Wise Men of Gotham": "hidden",
+            "Doctor Goldsmith": "hidden",
+            "The Blind Men and the Elephant": "hidden",
+            "The Barmecide Feast": "hidden",
+            "The Endless Tale": "hidden",
+            "Maximilian and the Goose Boy": "hidden",
+            "A Laconic Answer": "hidden",
+            "The Ungrateful Guest": "hidden",
+            "The Ungrateful Soldier": "hidden",
+            "The Inchcape Rock": "hidden",
+            "The Bell of Atri": "hidden",
+            "The King and His Hawk": "hidden",
+            "The Kingdoms": "hidden",
+            "Picciola": "hidden",
+            "Mignon": "hidden",
+            "Antonio Canova": "hidden",
+            "He Never Smiled Again": "hidden",
+            "King John and the Abbot": "hidden",
+            "The White Ship": "hidden",
+            "The Sword of Damocles": "hidden",
+            "The Sons of William the Conqueror": "hidden",
+        },
     },
     {
         "file": "baldwin-old-greek.txt",
@@ -285,6 +344,15 @@ BOOKS = [
         "gutenberg_id": 11582,
         "body_start_marker": "JUPITER AND HIS MIGHTY COMPANY",
         "default_tradition": "Greek",
+        "default_section": "hero",
+        # Cosmology + cautionary tales without a daring hero deed — hidden.
+        "section_overrides": {
+            "Jupiter and His Mighty Company": "hidden",
+            "The Golden Age": "hidden",
+            "The Flood": "hidden",
+            "The Story of Io": "hidden",
+            "The Wonderful Weaver": "hidden",
+        },
         "allow_titles": list(BALDWIN_HERO_TRADITION.keys()) + [
             "Jupiter and His Mighty Company",
             "The Golden Age",
@@ -302,6 +370,55 @@ BOOKS = [
             "The Wonderful Artisan",
             "The Cruel Tribute",
         ],
+    },
+    {
+        "file": "goodrich-famous-ancient.txt",
+        "source": "Famous Men of Ancient Times",
+        "source_slug": "goodrich-ancient",
+        "author": "Samuel G. Goodrich",
+        "year": 1856,
+        "gutenberg_id": 52400,
+        "body_start_marker": "MOHAMMED.",
+        "default_tradition": "Ancient",
+        "default_section": "hero",
+        # Goodrich indents chapter headings — allow leading whitespace. Allow Æ for ÆSOP / CÆSAR.
+        "title_pattern": r"^[ \t]*([A-ZÆŒ][A-ZÆŒ '\-.,]{2,80})\s*$",
+        # Body titles use full names (CAIUS JULIUS CÆSAR, LUCIUS ANNÆUS SENECA).
+        "tradition_map": {
+            "Mohammed": "Arabian",
+            "Belisarius": "Roman",
+            "Attila": "Medieval",
+            "Nero": "Roman",
+            "Lucius Annæus Seneca": "Roman",
+            "Virgil": "Roman",
+            "Cicero": "Roman",
+            "Caius Julius Cæsar": "Roman",
+            "Hannibal": "Carthaginian",
+            "Alexander, King of Macedon": "Greek",
+            "Aristotle": "Greek",
+            "Demosthenes": "Greek",
+            "Apelles": "Greek",
+            "Diogenes": "Greek",
+            "Plato": "Greek",
+            "Socrates": "Greek",
+            "Alcibiades": "Greek",
+            "Democritus": "Greek",
+            "Pericles": "Greek",
+            "Aristides": "Greek",
+            "Æsop": "Greek",
+            "Solon": "Greek",
+            "Lycurgus": "Spartan",
+            "Homer": "Greek",
+            "Confucius": "Asian",
+        },
+        "section_overrides": {
+            "Diogenes": "hidden",
+            "Æsop": "hidden",
+            "Apelles": "hidden",
+            "Democritus": "hidden",
+            "Nero": "hidden",
+            "Lucius Annæus Seneca": "hidden",
+        },
     },
     {
         "file": "lodge-american-heroes.txt",
@@ -323,8 +440,12 @@ BOOKS = [
         "gutenberg_id": 14465,
         "body_start_marker": "CHAPTER I. THE FIGHT WITH THE FIRBOLGS",
         "default_tradition": "Celtic",
-        "default_section": "hero",
-        # Strip the "CHAPTER X. " prefix from titles via a custom regex.
+        # ARCHIVED — Lady Gregory's chapters are mid-narrative fragments of a continuous
+        # mythology book. They reference characters introduced 3+ chapters earlier and
+        # do not read standalone. User feedback v3: "tales of it just jumped straight
+        # into something about someone but no context". Kept in source for possible
+        # future per-chapter contextual rewrites; not shown in the live library.
+        "default_section": "hidden",
         "title_pattern": r"^(?:CHAPTER\s+[IVXLC]+\.\s+|BOOK\s+[A-Z]+:\s+)?([A-Z][A-Z '\-.,]{2,80})\s*$",
     },
     {
@@ -443,30 +564,49 @@ def main():
         all_stories.extend(stories)
         print(f"  {book['source']:<32}  {len(stories):>3} stories")
 
+    # Drop hidden stories from the live library — they remain in per-source files
+    # for reference and easy re-promotion later, but the runtime never sees them.
+    visible = [s for s in all_stories if s.get("section") != "hidden"]
+    hidden_count = len(all_stories) - len(visible)
+
+    # Mark the seed-curation set
+    seed_found = 0
+    for s in visible:
+        if s["id"] in SEED_IDS:
+            s["seed"] = True
+            seed_found += 1
+    print(f"\nSeed stories marked: {seed_found}/{len(SEED_IDS)}")
+
     # Unified index: drop body for index, keep summary fields
     index = [
         {k: v for k, v in s.items() if k != "body"}
-        for s in all_stories
+        for s in visible
     ]
     index.sort(key=lambda s: s["title"].lower())
     (OUT_DIR / "library.json").write_text(
         json.dumps({"stories": index, "count": len(index)}, indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
-    print(f"\nTotal: {len(all_stories)} stories  →  stories/library.json")
+    print(f"\nVisible: {len(visible)} stories  →  stories/library.json  ({hidden_count} hidden)")
 
     # Also a per-story files map keyed by id for the runtime to fetch one body at a time
-    bodies = {s["id"]: s["body"] for s in all_stories}
+    bodies = {s["id"]: s["body"] for s in visible}
     (OUT_DIR / "bodies.json").write_text(
         json.dumps(bodies, indent=2, ensure_ascii=False), encoding="utf-8"
     )
 
-    # Traditions summary
+    # Traditions summary — visible only
     by_trad = {}
-    for s in all_stories:
+    by_section = {}
+    for s in visible:
         by_trad.setdefault(s["tradition"], 0)
         by_trad[s["tradition"]] += 1
-    print("\nBy tradition:")
+        by_section.setdefault(s["section"], 0)
+        by_section[s["section"]] += 1
+    print("\nVisible by section:")
+    for sec, n in sorted(by_section.items(), key=lambda x: -x[1]):
+        print(f"  {sec:<10} {n}")
+    print("\nVisible by tradition:")
     for t, n in sorted(by_trad.items(), key=lambda x: -x[1]):
         print(f"  {t:<15} {n}")
 

@@ -1,14 +1,16 @@
 // Hero Tales — minimal SW.
 // Cache first for the shell + library JSON. Bump CACHE_VERSION on deploys with breaking changes.
 
-const CACHE = 'hero-tales-v3';
+const CACHE = 'hero-tales-v6';
 const ASSETS = [
   './',
   'index.html',
   'story.html',
+  'curate.html',
   'assets/style.css',
   'assets/app.js',
   'assets/story.js',
+  'assets/curate.js',
   'assets/tts.js',
   'stories/library.json',
   'stories/bodies.json',

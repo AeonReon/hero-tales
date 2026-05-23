@@ -144,7 +144,24 @@ document.querySelectorAll('.section-tab').forEach(btn => {
 });
 setActiveTab();
 
-loadLibrary().catch(err => {
+function updateCurateCTA() {
+  const seeds = state.stories.filter(s => s.seed === true);
+  if (!seeds.length) return;
+  const cta = document.getElementById('curate-cta');
+  const sub = document.getElementById('curate-cta-sub');
+  const verdicts = JSON.parse(localStorage.getItem('ht-verdicts') || '{}');
+  const graded = seeds.filter(s => verdicts[s.id]).length;
+  if (graded >= seeds.length) {
+    sub.textContent = `All ${seeds.length} graded — review or restart from the Curate page.`;
+  } else if (graded > 0) {
+    sub.textContent = `${graded} of ${seeds.length} graded. Keep going.`;
+  } else {
+    sub.textContent = `Read or listen to each tale, then approve or disapprove. The verdicts shape the next batch.`;
+  }
+  cta.hidden = false;
+}
+
+loadLibrary().then(updateCurateCTA).catch(err => {
   console.error(err);
   document.querySelector('.tonight-title').textContent = 'Could not load library';
 });
