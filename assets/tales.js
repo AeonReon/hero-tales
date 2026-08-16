@@ -98,6 +98,7 @@ function renderList() {
     li.className = 'story-item';
     li.style.cssText = tradStyle(s.tradition);
     li.innerHTML = `
+      <span class="story-thumb"><img src="images/trad/${String(s.tradition || '').toLowerCase()}.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
       <a href="story.html?id=${encodeURIComponent(s.id)}">${esc(s.title)}</a>
       <span class="story-trad-pill">${esc(s.tradition)}</span>
       <span class="story-time">${s.minutes} min</span>`;

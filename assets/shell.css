@@ -287,6 +287,11 @@ html, body {
   font-size: 2rem; color: #fff; z-index: 0;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
 }
+/* Real photo over the gradient+glyph; removes itself on 404 to reveal the glyph. */
+.today-bar .tb-photo img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; z-index: 1;
+}
 
 /* ------------------------------------------------------------ Daily modal */
 
@@ -403,6 +408,15 @@ html, body {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
 }
 .rtile-ic svg { width: 34px; height: 34px; }
+/* Real photo behind the white icon; a soft scrim keeps the icon legible. */
+.rtile-photo img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; z-index: 1;
+}
+.rtile-photo.has-img::after {
+  content: ""; position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(150deg, rgba(0, 0, 0, .18), rgba(0, 0, 0, .42));
+}
 .rtile-body {
   flex: 1; min-width: 0;
   padding: 13px 12px 13px 16px;

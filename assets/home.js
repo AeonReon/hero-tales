@@ -41,19 +41,35 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 
 /* ----------------------------------------------------------------- the bars */
 
-function bar({ c, cd, glyph, kicker, title, teaser, onOpen }) {
+// Category images that sit behind the fixed daily cards. Missing files just
+// fall back to the gradient + glyph (the <img> removes itself on 404).
+const CAT_IMG = {
+  quote: 'images/cat/quote.jpg',
+  thought: 'images/cat/thought.jpg',
+  rule: 'images/cat/rule.jpg',
+  word: 'images/cat/word.jpg',
+  feat: 'images/cat/feat.jpg',
+  stand: 'images/cat/stand.jpg',
+  ledger: 'images/cat/ledger.jpg',
+};
+const tradImg = t => `images/trad/${String(t || '').toLowerCase()}.jpg`;
+
+function bar({ c, cd, glyph, kicker, title, teaser, img, onOpen }) {
   const b = document.createElement('button');
   b.className = 'today-bar';
   b.type = 'button';
   b.style.setProperty('--tc', c);
   b.style.setProperty('--tcd', cd);
+  const photo = img
+    ? `<img src="${img}" alt="" loading="lazy" onerror="this.remove()">`
+    : '';
   b.innerHTML = `
     <span class="tb-text">
       <span class="tb-kicker">${glyph} ${esc(kicker)}</span>
       <span class="tb-title">${esc(title)}</span>
       <span class="tb-teaser">${esc(teaser)}</span>
     </span>
-    <span class="tb-photo" aria-hidden="true"><span class="tb-glyph">${glyph}</span></span>`;
+    <span class="tb-photo" aria-hidden="true"><span class="tb-glyph">${glyph}</span>${photo}</span>`;
   b.addEventListener('click', onOpen);
   return b;
 }
@@ -75,6 +91,7 @@ function chronicleCard(entry, kicker, glyph) {
     glyph, kicker,
     title: entry.title,
     teaser: entry.teaser,
+    img: entry.image || CAT_IMG[entry.shelf],
     onOpen: () => openModal({
       c: entry.color || sh.c, cd: entry.colorDeep || sh.cd,
       glyph, kicker, title: entry.title,
@@ -100,6 +117,7 @@ function render(off) {
       c: sh.c, cd: sh.cd, glyph: '⚔️', kicker: "Tonight's tale",
       title: tale.title,
       teaser: `${tale.tradition} · ${tale.minutes} min to read aloud · from ${tale.source}`,
+      img: tradImg(tale.tradition),
       onOpen: () => { location.href = `story.html?id=${encodeURIComponent(tale.id)}`; }
     }));
   }
@@ -108,7 +126,7 @@ function render(off) {
   const q = pickBy(window.QUOTES, off);
   if (q) cards.push(bar({
     c: '#C6811A', cd: '#8A5A0F', glyph: '❝', kicker: 'Line of the day',
-    title: q.author, teaser: q.text,
+    title: q.author, teaser: q.text, img: CAT_IMG.quote,
     onOpen: () => openModal({
       c: '#C6811A', cd: '#8A5A0F', glyph: '❝', kicker: 'Line of the day', title: q.author,
       html: `<p class="ht-quote">${esc(q.text)}</p>`
@@ -129,7 +147,7 @@ function render(off) {
   const t = pickBy(window.THOUGHTS, off);
   if (t) cards.push(bar({
     c: '#1F8F5E', cd: '#146046', glyph: '💭', kicker: 'A thought to turn over',
-    title: t.source, teaser: t.text,
+    title: t.source, teaser: t.text, img: CAT_IMG.thought,
     onOpen: () => openModal({
       c: '#1F8F5E', cd: '#146046', glyph: '💭', kicker: 'A thought to turn over', title: t.source,
       html: `<p>${esc(t.text)}</p>`
@@ -141,7 +159,7 @@ function render(off) {
   const m = pickBy(window.MAXIMS, off);
   if (m) cards.push(bar({
     c: '#7C3AED', cd: '#5B21B6', glyph: '📜', kicker: 'A rule to hold',
-    title: m.title, teaser: m.text.replace(/\n/g, ' '),
+    title: m.title, teaser: m.text.replace(/\n/g, ' '), img: CAT_IMG.rule,
     onOpen: () => openModal({
       c: '#7C3AED', cd: '#5B21B6', glyph: '📜', kicker: 'A rule to hold', title: m.title,
       html: `<p class="ht-verse">${esc(m.text)}</p>`
@@ -155,7 +173,7 @@ function render(off) {
   const w = pickBy(window.WORDS, off);
   if (w) cards.push(bar({
     c: '#0EA5A4', cd: '#0F766E', glyph: '🔤', kicker: 'Word of the day',
-    title: w.word, teaser: w.meaning,
+    title: w.word, teaser: w.meaning, img: CAT_IMG.word,
     onOpen: () => openModal({
       c: '#0EA5A4', cd: '#0F766E', glyph: '🔤', kicker: 'Word of the day', title: w.word,
       html: `<div class="ht-word-line"><b>Origin</b><span>${esc(w.lang)} · ${esc(w.root)}</span></div>`
@@ -177,9 +195,12 @@ document.getElementById('todayShuffle').addEventListener('click', () => { offset
 
 /* ------------------------------------------------------------------- tiles */
 
-function rtile({ href, icon, c, cd, name, tagline, count }) {
+function rtile({ href, icon, c, cd, name, tagline, count, img }) {
+  const photo = img
+    ? `<span class="rtile-photo has-img"><img src="${img}" alt="" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove()"><span class="rtile-ic">${svgIcon(icon)}</span></span>`
+    : `<span class="rtile-photo"><span class="rtile-ic">${svgIcon(icon)}</span></span>`;
   return `<a href="${href}" class="rtile" style="--c:${c};--cd:${cd};">
-      <span class="rtile-photo"><span class="rtile-ic">${svgIcon(icon)}</span></span>
+      ${photo}
       <span class="rtile-body">
         <span class="rtile-name">${esc(name)}</span>
         <span class="rtile-tagline">${esc(tagline)}</span>
@@ -199,7 +220,8 @@ function renderTiles() {
     return rtile({
       href: `tales.html?shelf=${key}`, icon: sh.icon, c: sh.c, cd: sh.cd,
       name: sh.name, tagline: sh.blurb,
-      count: `${countIn(key)} tales`
+      count: `${countIn(key)} tales`,
+      img: key === 'fable' ? 'images/trad/fable.jpg' : 'images/cat/hero.jpg'
     });
   }).join('');
 
@@ -208,7 +230,8 @@ function renderTiles() {
     return rtile({
       href: `chronicles.html?shelf=${key}`, icon: sh.icon, c: sh.c, cd: sh.cd,
       name: sh.name, tagline: sh.blurb,
-      count: `${chronCount(key)} ${chronCount(key) === 1 ? 'chronicle' : 'chronicles'}`
+      count: `${chronCount(key)} ${chronCount(key) === 1 ? 'chronicle' : 'chronicles'}`,
+      img: CAT_IMG[key]
     });
   }).join('');
 
