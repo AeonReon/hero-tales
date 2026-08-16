@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#A96A15">
+<title>The tales — Hero Tales</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="assets/shell.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="browse">
+
+<main class="shell-main">
+  <div class="ht-hero">
+    <h1 id="shelf-title">The tales</h1>
+    <p id="shelf-blurb"></p>
+  </div>
+
+  <div class="shelf-switch" id="shelf-switch"></div>
+
+  <section class="tile-section">
+    <h2 class="tile-section-title">By tradition</h2>
+    <div id="tradition-chips" class="chip-row"></div>
+  </section>
+
+  <section class="tile-section">
+    <div class="list-header">
+      <h2 class="tile-section-title" id="list-title">All tales</h2>
+      <select id="sort-by" class="sort-select" aria-label="Sort">
+        <option value="short">Shortest first</option>
+        <option value="alpha">A → Z</option>
+        <option value="tradition">By tradition</option>
+      </select>
+    </div>
+    <ul id="story-list" class="story-list"></ul>
+  </section>
+</main>
+
+<footer class="shell-footer">
+  Every tale is public domain, pre-1929, from Project Gutenberg. The read time is honest — long chapters are marked as long.
+</footer>
+
+<div id="version-pill" class="version-pill"></div>
+
+<script src="assets/shell.js"></script>
+<script src="assets/tales.js"></script>
+</body>
+</html>

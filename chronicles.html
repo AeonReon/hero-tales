@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#A96A15">
+<title>The chronicles — Hero Tales</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="assets/shell.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="browse">
+
+<main class="shell-main">
+  <div class="ht-hero">
+    <h1 id="shelf-title">The chronicles</h1>
+    <p id="shelf-blurb"></p>
+  </div>
+
+  <div class="shelf-switch" id="shelf-switch"></div>
+
+  <div class="ledger-warning" id="ledger-warning" hidden>
+    <b>Read this shelf differently.</b> Nobody here is a model. These are enormous achievements with a monstrous price, and men whose ability is not in doubt and whose use of it was. They are on the shelf so that greatness is recognisable when it turns up on the wrong side.
+  </div>
+
+  <section class="tile-section">
+    <div class="rtile-list" id="chronicle-list"></div>
+  </section>
+</main>
+
+<footer class="shell-footer">
+  Written for this app, not lifted from a book. Figures are the commonly cited ones, hedged where historians disagree, and the cost of each undertaking is stated with it.
+</footer>
+
+<div id="version-pill" class="version-pill"></div>
+
+<script src="assets/shell.js"></script>
+<script src="assets/feats-data.js"></script>
+<script src="assets/stands-data.js"></script>
+<script src="assets/ledger-data.js"></script>
+<script src="assets/chronicles.js"></script>
+</body>
+</html>

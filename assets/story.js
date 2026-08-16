@@ -48,7 +48,8 @@ function pickRandomId() {
   // Pick from the same section as the current story (hero/fable) so "Another tale" stays on-shelf.
   const currentMeta = libraryIndex.find(s => s.id === currentId);
   const section = (currentMeta && currentMeta.section) || localStorage.getItem('ht-section') || 'hero';
-  const pool = libraryIndex.filter(s => (s.section || 'hero') === section);
+  const pool = Keeper.keep(libraryIndex.filter(s => (s.section || 'hero') === section));
+  if (!pool.length) return currentId;
   return pool[Math.floor(Math.random() * pool.length)].id;
 }
 
@@ -82,6 +83,7 @@ function showStory(id) {
     `From ${meta.source} by ${meta.author} (${meta.year}) · public domain via Project Gutenberg`;
 
   renderVerdict(meta);
+  reflectAway();
 
   window.scrollTo({ top: 0, behavior: 'instant' });
   stopReading();
@@ -111,6 +113,22 @@ function recordVerdict(verdict) {
 
 document.getElementById('vt-approve')?.addEventListener('click', () => recordVerdict('approve'));
 document.getElementById('vt-disapprove')?.addEventListener('click', () => recordVerdict('disapprove'));
+
+// --- put away ---
+// The purge, reachable from the tale itself: one tap and it is off the daily
+// feed and every list. Reversible from the shelf-keeper.
+function reflectAway() {
+  const btn = document.getElementById('put-away');
+  if (!btn) return;
+  const away = Keeper.isAway(currentId);
+  btn.textContent = away ? '\u21A9\uFE0E Bring back' : 'Put away';
+  btn.classList.toggle('disapprove', away);
+}
+document.getElementById('put-away')?.addEventListener('click', () => {
+  const nowAway = Keeper.toggle(currentId);
+  reflectAway();
+  toast(nowAway ? 'Put away \u2014 off every list' : 'Back on the shelf');
+});
 
 // --- read aloud (via TTS module: Echo / Kokoro on Mac mini, falls back to device voice) ---
 const ENGINE_KEY = 'ht-engine';
@@ -210,28 +228,4 @@ loadAll().catch(err => {
   document.getElementById('story-title').textContent = 'Could not load story';
 });
 
-// --- build stamp ---
-let _initialStamp = null;
-async function checkBuildStamp() {
-  try {
-    const res = await fetch('build-stamp.json', { cache: 'no-store' });
-    const { stamp } = await res.json();
-    if (_initialStamp === null) {
-      _initialStamp = stamp;
-      const pill = document.getElementById('version-pill');
-      if (pill) pill.textContent = `v${String(stamp).slice(-6)}`;
-    } else if (stamp !== _initialStamp) {
-      const b = document.createElement('div');
-      b.className = 'refresh-banner';
-      b.textContent = '🔄 New tales available — tap to reload';
-      b.onclick = () => location.reload();
-      document.body.appendChild(b);
-    }
-  } catch {}
-}
-checkBuildStamp();
-setInterval(checkBuildStamp, 60000);
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(() => {});
-}
+bootShell();
