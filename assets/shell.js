@@ -4,7 +4,7 @@
 // purge, and the small helpers the pages share. Loaded before every page
 // script. Nothing here touches the DOM until a page asks it to.
 
-const APP_VERSION = 'v10';
+const APP_VERSION = 'v11';
 
 /* ------------------------------------------------------------------ helpers */
 
@@ -223,7 +223,16 @@ async function shellCheckStamp() {
 
 function bootShell() {
   const pill = document.getElementById('version-pill');
-  if (pill) pill.textContent = APP_VERSION;
+  if (pill) {
+    pill.textContent = APP_VERSION;
+    pill.title = 'Tap for build details';
+    pill.addEventListener('click', async () => {
+      let stamp = 'unknown';
+      try { stamp = (await (await fetch('build-stamp.json', { cache: 'no-store' })).json()).stamp; } catch {}
+      const built = Number(stamp) ? new Date(Number(stamp) * 1000).toLocaleString() : 'unknown';
+      alert(`Hero Tales ${APP_VERSION}\n\nBuilt: ${built}\nShelf: ${Keeper.count()} item(s) put away\n\nIf this version looks old, the app is being served from its offline cache — close every tab and reopen.`);
+    });
+  }
   registerSW();
   shellCheckStamp();
   setInterval(shellCheckStamp, 60000);
