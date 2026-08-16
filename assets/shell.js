@@ -4,7 +4,7 @@
 // purge, and the small helpers the pages share. Loaded before every page
 // script. Nothing here touches the DOM until a page asks it to.
 
-const APP_VERSION = 'v11';
+const APP_VERSION = 'v12';
 
 /* ------------------------------------------------------------------ helpers */
 

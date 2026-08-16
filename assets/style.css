@@ -8,13 +8,14 @@
    ========================================================================= */
 
 :root {
-  /* Kept from the original palette so existing markup keeps working */
-  --cream: #FAF6EC;
-  --cream-2: #F2EBD8;
-  --muted: #6B5F50;
-  --amber: #C8651B;
-  --amber-2: #E08434;
-  --gold-warm: #C9A24A;
+  /* Local aliases onto the shared tokens in shell.css, kept so the older
+     markup keeps working. Do not introduce new colours here. */
+  --cream: var(--paper);
+  --cream-2: var(--paper-warm);
+  --muted: var(--ink-mute);
+  --amber: var(--sun-deep);
+  --amber-2: var(--sun-hot);
+  --gold-warm: var(--gold);
 
   /* Tradition accents (paired: deep / glow) */
   --t-greek-1: #1E3A8A;   --t-greek-2: #2563EB;
@@ -37,8 +38,8 @@
 }
 
 body { min-height: 100vh; padding-bottom: env(safe-area-inset-bottom); }
-a { color: var(--amber); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { color: var(--sun-hot); text-decoration: none; }
+a:hover { color: var(--pink); text-decoration: underline; }
 
 /* ============================================================ Shelf switch */
 
@@ -159,10 +160,10 @@ a:hover { text-decoration: underline; }
   padding: .5em .95em;
   cursor: pointer;
 }
-.voice-toggle:hover, .campfire-btn:hover { border-color: var(--gold); color: var(--amber); }
+.voice-toggle:hover, .campfire-btn:hover { border-color: var(--gold); color: var(--gold-deep); }
 .voice-toggle.echo { border-color: var(--gold); color: var(--gold-deep); }
 .campfire-btn[aria-pressed="true"] {
-  background: linear-gradient(120deg, var(--amber), var(--amber-2));
+  background: var(--grad-sun);
   color: #fff; border-color: transparent;
 }
 .voice-toast {
@@ -222,9 +223,9 @@ a:hover { text-decoration: underline; }
   text-decoration: none;
   display: inline-flex; align-items: center; text-align: center;
 }
-.ctrl-btn.primary { background: linear-gradient(120deg, var(--amber), var(--amber-2)); color: #fff; }
+.ctrl-btn.primary { background: var(--grad-sky-app); color: #fff; box-shadow: 0 4px 13px rgba(46, 132, 189, .32); }
 .ctrl-btn.ghost { background: #fff; border: 1.5px solid var(--rule); box-shadow: none; }
-.ctrl-btn.speaking { background: linear-gradient(120deg, var(--gold-warm), var(--amber)); color: #fff; }
+.ctrl-btn.speaking { background: var(--grad-sun); color: #fff; }
 
 /* ================================================== Chronicle-only pieces */
 

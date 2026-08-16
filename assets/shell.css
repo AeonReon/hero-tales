@@ -11,42 +11,65 @@
    ========================================================================= */
 
 :root {
-  --ink: #2A2520;
-  --ink-soft: #4A4034;
-  --ink-mute: #6B5F50;
-
+  /* ---------------------------------------------------------------------
+     These tokens are byte-identical to Classical Mind and Classical
+     Architecture. Do not drift them — the three apps are meant to read as
+     one family. Anything peculiar to Hero Tales goes in the block below.
+     --------------------------------------------------------------------- */
+  --ink: #2A2038;
+  --ink-soft: #5C4B6B;
+  --ink-mute: #7A6D85;
   --paper: #FAF6EC;
-  --paper-warm: #FFF6E2;
+  --paper-warm: #FFF6D9;
   --paper-card: #FFFFFF;
   --paper-surface: #FFFBF0;
-
-  --rule: #EADFC6;
+  --rule: #F0E5C8;
   --rule-soft: #F6EED4;
   --rule-strong: #E6D6A8;
 
-  --gold: #E7A83C;
-  --gold-deep: #C6811A;
-  --gold-dark: #8A5A0F;
-  --bronze: #B4560F;
-  --bronze-deep: #7A360A;
-  --ember: #D9531E;
+  --sun: #FFD64A;
+  --sun-hot: #FF9F3D;
+  --pink: #FF5E8E;
+  --sky: #4A9ED4;
+  --sky-soft: #6CB4E2;
+  --mint: #4CCB9F;
 
-  --grad-gold: linear-gradient(135deg, #E7A83C, #C6811A);
-  --grad-app: linear-gradient(135deg, #C6811A, #8A4A12);
-  --grad-ember: linear-gradient(135deg, #E7A83C, #D9531E);
+  --sky-deep: #2D6FA8;
+  --sun-deep: #C97D2A;
+  --leaf: #4CCB9F;
+  --leaf-soft: #D5F4E6;
+  --rose: #FF5E8E;
+  --rose-soft: #FFE0EB;
+  --sky-soft-bg: #E0F0FA;
+  --sun-soft: #FFF6D9;
 
-  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, Helvetica, Arial, sans-serif;
+  --grad-warm: linear-gradient(135deg, #FFD64A 0%, #FF9F3D 50%, #FF5E8E 100%);
+  --grad-sun: linear-gradient(135deg, #FFD64A 0%, #FF9F3D 100%);
+  --grad-sky: linear-gradient(135deg, #6CB4E2 0%, #4A9ED4 100%);
+  --grad-fresh: linear-gradient(135deg, #FFD64A 0%, #4CCB9F 100%);
+  --grad-pink: linear-gradient(135deg, #FF9F3D 0%, #FF5E8E 100%);
 
-  --shadow-sm: 0 2px 4px rgba(60, 45, 20, .06), 0 6px 16px rgba(60, 45, 20, .07);
-  --shadow-md: 0 2px 4px rgba(60, 45, 20, .07), 0 10px 24px rgba(60, 45, 20, .09);
-  --shadow-lg: 0 8px 20px rgba(60, 45, 20, .16), 0 24px 60px rgba(60, 45, 20, .14);
+  --serif: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Helvetica, Arial, sans-serif;
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.05), 0 4px 12px rgba(40, 30, 20, 0.06);
+  --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 10px 28px rgba(40, 30, 20, 0.10);
+  --shadow-lg: 0 4px 12px rgba(40, 30, 20, 0.10), 0 24px 60px rgba(40, 30, 20, 0.14);
 
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 22px;
   --radius-pill: 999px;
 
-  /* Shelf accents — one colour pair per shelf, used by tiles, bars and modals */
+  /* ---- The app bar, same as the siblings: sky blue with gold accents ---- */
+  --gold: #E7A83C;
+  --gold-deep: #C6811A;
+  --gold-dark: #8A5A0F;
+  --grad-gold: linear-gradient(135deg, #E7A83C, #C6811A);
+  --grad-sky-app: linear-gradient(135deg, #5FB1DD, #3F8FCB);
+  --grad-app: var(--grad-sky-app);
+
+  /* ---- Hero Tales only: one colour pair per shelf ---- */
   --shelf-hero-c: #B4560F;   --shelf-hero-cd: #7A360A;
   --shelf-fable-c: #65A30D;  --shelf-fable-cd: #3F6B08;
   --shelf-feat-c: #2F9E77;   --shelf-feat-cd: #1F6B52;
@@ -61,8 +84,8 @@ html, body {
   margin: 0;
   padding: 0;
   background:
-    radial-gradient(900px 500px at -10% -20%, rgba(231, 168, 60, .24), transparent 60%),
-    radial-gradient(900px 500px at 110% -10%, rgba(217, 83, 30, .13), transparent 60%),
+    radial-gradient(900px 500px at -10% -20%, rgba(255, 214, 74, 0.22), transparent 60%),
+    radial-gradient(900px 500px at 110% -10%, rgba(255, 94, 142, 0.16), transparent 60%),
     var(--paper);
   background-attachment: fixed;
   color: var(--ink);
@@ -78,7 +101,7 @@ html, body {
 
 .appbar {
   background: var(--grad-app);
-  box-shadow: 0 2px 10px rgba(90, 55, 12, .24);
+  box-shadow: 0 2px 10px rgba(31, 90, 140, .22);
   position: sticky;
   top: 0;
   z-index: 40;
@@ -101,7 +124,7 @@ html, body {
 .appbar .brand {
   justify-self: center;
   font-weight: 800; font-size: 17px; letter-spacing: -.01em;
-  color: #fff; text-shadow: 0 1px 2px rgba(70, 40, 8, .45);
+  color: #fff; text-shadow: 0 1px 2px rgba(18, 58, 96, .4);
 }
 .appbar .hbtn {
   justify-self: end;
@@ -269,7 +292,7 @@ html, body {
 
 .ht-modal-overlay {
   position: fixed; inset: 0; z-index: 80;
-  background: rgba(40, 26, 12, .55);
+  background: rgba(30, 22, 15, .55);
   backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
   display: flex; align-items: center; justify-content: center;
   padding: max(36px, calc(env(safe-area-inset-top) + 20px)) 24px
@@ -433,7 +456,7 @@ html, body {
   border: 1.5px solid rgba(255, 255, 255, .55);
   border-radius: var(--radius-pill);
   padding: 6px 11px;
-  box-shadow: 0 2px 8px rgba(90, 55, 12, .3);
+  box-shadow: 0 2px 8px rgba(31, 90, 140, .32);
   cursor: pointer;
   user-select: none;
 }
