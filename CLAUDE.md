@@ -1,41 +1,132 @@
 # Hero Tales — Project Rules
 
-A library of short, public-domain hero tales — for a parent to read aloud at a campfire, at bedtime, or whenever there's a quiet hour with children or teenagers. Inspired by what the Romans and Greeks did with their children: tell great stories of courage, cleverness, mercy and loyalty to inspire greatness.
+Stories of humans doing great things, for a parent to read aloud — at a campfire,
+at bedtime, or whenever there's a quiet hour with children or teenagers. Inspired
+by what the Greeks and Romans did with their children: tell great tales of
+courage, cleverness, mercy, loyalty and the will to build, to provoke imitation.
+Plutarch said outright that this was why he wrote the *Lives*.
+
+## The five shelves
+
+| Shelf | What it is | Source |
+|---|---|---|
+| **Hero tales** | The tales themselves | Public domain |
+| **Fables** | Aesop and the animal folk-tales | Public domain |
+| **Great works** | Things built — canal, bridge, cable, dome | Written for the app |
+| **The stands** | Defence, endurance, daring | Written for the app |
+| **The ledger** | Great power turned to destruction | Written for the app |
+
+The first two are the original library. The last three are the **chronicles** —
+written for this app, kept in `assets/{feats,stands,ledger}-data.js`.
 
 ## Voice and content rule
 
-The stories are not commentary — they are the tales themselves, in the storytelling voice of the 19th-century editors who first put them into a child-readable form (Baldwin, Bulfinch, Kingsley, Colum). Don't moralise. Don't bowdlerise. Don't add modern editorial framing. The tales carry their own weight.
+**The tales** are not commentary — they are the stories themselves, in the
+storytelling voice of the 19th-century editors who first put them into a
+child-readable form (Baldwin, Bulfinch, Kingsley, Colum, Lady Gregory). Don't
+moralise. Don't bowdlerise. Don't add modern editorial framing.
+
+**The chronicles** are written prose and follow stricter rules, because they
+handle contested history:
+
+- Say plainly that they are written for the app, not lifted from a book.
+- Use the commonly cited figures. Where historians genuinely differ, give the
+  range and say so — never state contested history as settled fact.
+- **The cost goes in `cost`, always.** A feat with the price cut out is a lie.
+  That includes the awkward part: the Chinese wage differential on the Central
+  Pacific, the pretext for the Anglo-Zulu War, the West Indian death toll at
+  Panama.
+- `reckoning` is one or two lines and is the *only* place in the whole app
+  where the writer says what a thing means. Do not sermonise anywhere else.
+- **Cause and conduct are separate judgements.** Camarón and Rorke's Drift are
+  admirable conduct inside causes that were not. Say both. A telling that
+  collapses the two in either direction is propaganda.
+
+### The ledger shelf, specifically
+
+This shelf exists because a child shown only greatness that was also good will
+not recognise the other kind when it arrives — and it always arrives with
+plans, energy and a great deal of construction. The White Sea Canal came in
+ahead of schedule.
+
+1. **State the achievement plainly.** Shrinking it to make the villain smaller
+   is a lie and teaches the wrong lesson: that terrible men are feeble.
+2. **State the cost plainly, in the same voice.** No softening.
+3. **Never present a man on this shelf as a model.** The tale is the caution.
+4. The shelf carries a standing note at the top of the list telling the reader
+   how to read it. Keep it.
 
 ## Scope discipline
 
-- **Public domain only.** Every story sourced from Project Gutenberg, pre-1929. Source attribution is shown on every story page.
-- **Short.** Target 2–10 minutes read-aloud time. Longer chapters (Theseus, Quest of Medusa's Head) are included but marked honestly with read time so the user can choose.
-- **No accounts, no cloud, no sign-in.** Local-only. Optional favourites in LocalStorage later.
+- **Tales: public domain only.** Sourced from Project Gutenberg, pre-1929.
+  Source attribution shown on every story page.
+- **Short.** Target 2–10 minutes read-aloud. Longer chapters are included but
+  marked honestly with read time.
+- **No accounts, no cloud, no sign-in.** Local-only, LocalStorage.
 - **Light and warm.** Cream / amber / gold. Never dark UI.
-- **Read-aloud uses system voice.** Web Speech API speechSynthesis. Prefers a male UK English voice (Daniel on iOS) to match the storyteller register.
+- **Read-aloud** via `assets/tts.js` — Echo (Kokoro on the Mac mini) with the
+  device system voice as fallback.
+
+## The shelf-keeper (the purge)
+
+The owner's shelf is the owner's. `keep.html` lists everything in the app —
+all 304 tales and every chronicle — with a put-away toggle, plus a search and
+shelf filters. Put-away ids live in `localStorage` under `ht-away`, and
+**every list in the app filters through `Keeper.keep()`**: the daily feed, both
+browse pages, "Another tale", "Surprise me". Nothing is ever deleted from the
+data files, so it is always reversible, and the list can be copied out to be
+baked into a build.
+
+If you add a new list anywhere, run it through `Keeper.keep()`.
 
 ## Stack
 
 - Plain HTML, CSS, vanilla JS. No build step. Static deploy.
-- Stories live in `stories/library.json` (index, no bodies) and `stories/bodies.json` ({id: body}). Bodies fetched once at load.
-- PWA via `manifest.json` and `sw.js`.
+- `assets/shell.css` + `assets/shell.js` carry the shared design language and
+  plumbing (tokens, app bar, daily feed, tiles, modal, icons, the Keeper).
+  Loaded first on every page. Page-specific styles live in `assets/style.css`.
+- Tales live in `stories/library.json` (index) and `stories/bodies.json`
+  ({id: body}), generated by `scripts/build_library.py`.
+- PWA via `manifest.json` and `sw.js`. **Bump `APP_VERSION` in `shell.js` and
+  `CACHE` in `sw.js` on every ship**, and add any new file to the `ASSETS` list.
 - Deploy: GitHub AeonReon → Vercel aeonreon (static site, no build command).
 
-## Adding a new collection
+### Watch out
 
-1. Drop the Gutenberg `.txt` into `/data/` (use `pgXXXXX.txt` filename).
-2. Add a `BOOKS` entry in `scripts/build_library.py`:
-   - `body_start_marker`: an ALL-CAPS string that appears at the start of the first story body
-   - `allow_titles`: list of TOC titles to whitelist (filters out license boilerplate and stray sub-headings)
-   - `tradition_map`: optional `{title: tradition}` overrides
-3. Run `python3 scripts/build_library.py`. It rebuilds `library.json` + `bodies.json`.
+`shell.js` and the older page scripts (`story.js`, `curate.js`) are all classic
+scripts sharing one global scope. A top-level `let`/`const` with the same name
+in two of them is a **SyntaxError that kills the page**. If you add a global to
+`shell.js`, grep the page scripts first.
+
+## Adding a new tale collection
+
+1. Drop the Gutenberg `.txt` into `/data/` (use `pgXXXXX.txt`).
+2. Add a `BOOKS` entry in `scripts/build_library.py`: `body_start_marker` (an
+   ALL-CAPS string at the start of the first story body), `allow_titles`
+   (whitelist of TOC titles), optional `tradition_map`.
+3. `python3 scripts/build_library.py` — rebuilds `library.json` + `bodies.json`.
 4. Commit + push. Vercel auto-deploys.
+
+## Adding a chronicle
+
+Append to the array in `assets/feats-data.js`, `stands-data.js` or
+`ledger-data.js`. Required fields: `id`, `shelf`, `title`, `kicker`, `where`,
+`when`, `who`, `icon` (a key in `ICONS` in `shell.js`), `color`, `colorDeep`,
+`teaser`, `body` (array of paragraphs), `cost`, `reckoning`. Ids must be unique
+across all three files — they share one `window.CHRONICLES` array.
 
 ## Design
 
-Same vocabulary as Classical Mind and New Beginnings:
-- Warm cream background with soft amber/gold sunbursts
-- System sans throughout, heavy weights, tight letter-spacing
-- Gradient-outline tiles in the tradition's accent colour (Greek deep blue, Roman oxblood, Norse ice blue, etc.)
-- Campfire mode: same warm cream but bigger text, fewer controls — for when the user is the storyteller
-- Read-aloud button on every story page
+Same vocabulary as Classical Mind and Classical Architecture:
+
+- Warm cream ground with soft amber sunbursts; sticky gradient app bar (bronze
+  here, where Classical Architecture uses sky blue).
+- System sans throughout, heavy weights (800), tight letter-spacing.
+- **The "For today" feed** is the reason to come back: eight cards picked by the
+  day number so they stand all day and turn over at midnight, each opening a
+  modal. Tonight's tale · a line · a great work · a stand · a thought · a rule ·
+  a word · one from the ledger. Shuffle walks every list forward at once.
+- Row tiles (`.rtile`) with a gradient spine and a white icon on a gradient
+  block; gradient-outline story rows in the tradition's accent colour.
+- Campfire mode: same warm cream, bigger text, chrome hidden — for when the
+  reader is the storyteller.

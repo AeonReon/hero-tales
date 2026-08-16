@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#A96A15">
+<title>The shelf-keeper — Hero Tales</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="assets/shell.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="browse">
+
+<main class="shell-main">
+  <div class="ht-hero">
+    <h1>The shelf-keeper.</h1>
+    <p>Your shelf is yours. Anything you do not want in the house — put it away, and it disappears from the daily feed and every list in the app. Nothing is ever deleted, so you can bring it back at any time.</p>
+  </div>
+
+  <div class="keeper-bar">
+    <button type="button" class="keeper-tab active" data-view="away">Put away <span id="away-count">0</span></button>
+    <button type="button" class="keeper-tab" data-view="all">Everything on the shelf</button>
+  </div>
+
+  <div id="away-view">
+    <section class="tile-section">
+      <div id="away-list"></div>
+    </section>
+    <div class="keeper-actions" id="away-actions" hidden>
+      <button type="button" class="ctrl-btn" id="export-away">Copy the list</button>
+      <button type="button" class="ctrl-btn disapprove" id="restore-all">Bring everything back</button>
+    </div>
+  </div>
+
+  <div id="all-view" hidden>
+    <div class="chip-row" id="all-filters"></div>
+    <input type="search" id="all-search" class="keeper-search" placeholder="Search titles…" aria-label="Search titles">
+    <section class="tile-section">
+      <div id="all-list"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="shell-footer">
+  Put-away items live only on this device, in local storage. Copy the list if you want the same shelf on another phone — or to have the ids baked into a build.
+</footer>
+
+<div id="version-pill" class="version-pill"></div>
+
+<script src="assets/shell.js"></script>
+<script src="assets/feats-data.js"></script>
+<script src="assets/stands-data.js"></script>
+<script src="assets/ledger-data.js"></script>
+<script src="assets/keep.js"></script>
+</body>
+</html>

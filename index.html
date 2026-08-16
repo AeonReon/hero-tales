@@ -3,72 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#FAF6EC">
-<title>Hero Tales — Stories of greatness, for telling aloud</title>
+<meta name="theme-color" content="#A96A15">
+<title>Hero Tales — greatness, one day at a time</title>
+<meta name="description" content="A tale, a line, a great work and a warning, every day. Stories of courage, cunning, vision and building — for telling aloud.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Hero Tales">
+<link rel="stylesheet" href="assets/shell.css">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="library">
+<body class="launcher">
 
-<header class="hero">
-  <div class="hero-wrap">
-    <h1>Hero Tales</h1>
-    <p class="hero-lede">Stories of humans doing great things — courage, cunning, vision, loyalty, holding the line. Drawn from the Greek and Roman heroes the classical world told their children, the Irish Fianna, the medieval kings, and the American founders. Made for telling aloud.</p>
+<main class="shell-main">
+
+  <div class="ht-hero">
+    <h1>Greatness, one day at a time.</h1>
+    <p>A tale to tell aloud, a line from a man who did something, a great work and what it cost, a stand that should be better known — and one warning from the ledger. New every day. The whole shelf is below.</p>
   </div>
-  <nav class="section-tabs" role="tablist">
-    <button class="section-tab active" data-section="hero" role="tab" aria-selected="true">⚔️ Hero Tales</button>
-    <button class="section-tab" data-section="fable" role="tab" aria-selected="false">🦊 Fables &amp; folk tales</button>
-  </nav>
-</header>
 
-<main>
-  <a href="curate.html" id="curate-cta" class="curate-cta" hidden>
-    <span class="curate-cta-icon">🎯</span>
-    <div class="curate-cta-body">
-      <div class="curate-cta-title">Help shape the shelf — curate the seed 20</div>
-      <div class="curate-cta-sub" id="curate-cta-sub">Read or listen to each tale, then approve or disapprove. The verdicts shape the next batch.</div>
+  <details class="welcome" id="welcomeBox">
+    <summary class="welcome-sum">
+      <span class="wl-badge" aria-hidden="true">🔥</span>
+      <span class="wl-sumtxt"><b>New here?</b> Two minutes — what this is, and what it is for</span>
+      <span class="wl-chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="welcome-body">
+      <p>The Greeks and Romans did something with their children that we have largely stopped doing: they told them, over and over, about people who did great things. Not to entertain them. To give them models, and to expect them to be copied. Plutarch said plainly that he wrote his <i>Lives</i> so that a young man reading them would be provoked into imitation.</p>
+      <p><b>That is the whole aim here.</b> Courage, cunning, loyalty, mercy, endurance, the will to build — shown by people who actually had them, told in the storyteller's voice rather than a lecturer's. The tales are not commentary and they do not moralise. They carry their own weight.</p>
+      <p><b>Five shelves.</b> The <b>hero tales</b> and the <b>fables</b> are public-domain stories from the great 19th-century tellers. <b>Great works</b> is things built — the canal, the bridge, the cable, the dome — because the men who drove those through were as hard as any soldier and almost nobody tells their story. <b>The stands</b> are defences and daring, weighted toward the ones left out of the usual books. And <b>the ledger</b> is the dark half: enormous achievements bought at a monstrous price, told as warnings, so that a child who has only been shown good greatness will recognise the other kind when it arrives with plans and a flag.</p>
+      <p><b>Your shelf, your call.</b> Anything you do not want in the house — tap <i>Put away</i> on it and it is gone from every list. Nothing is locked in.</p>
     </div>
-    <span class="curate-cta-cta">Start →</span>
-  </a>
+  </details>
 
-  <section class="tonight">
-    <div class="tonight-label">Tonight's tale</div>
-    <a id="tonight-card" class="tonight-card" href="#">
-      <div class="tonight-title">Loading…</div>
-      <div class="tonight-meta"></div>
-      <div class="tonight-cta">Read this one →</div>
-    </a>
-    <button id="reshuffle" class="reshuffle">Pick another</button>
-  </section>
-
-  <section class="filter-section">
-    <h2 class="section-title">Browse by tradition</h2>
-    <div id="tradition-chips" class="chip-row"></div>
-  </section>
-
-  <section class="list-section">
-    <div class="list-header">
-      <h2 class="section-title" id="list-title">All tales</h2>
-      <select id="sort-by" class="sort-select" aria-label="Sort">
-        <option value="short">Shortest first</option>
-        <option value="alpha">A → Z</option>
-        <option value="tradition">By tradition</option>
-      </select>
+  <section class="daily-feed" aria-label="For today">
+    <div class="today-head">
+      <div class="daily-lead">For today</div>
+      <button class="today-shuffle" id="todayShuffle" type="button">Shuffle <span aria-hidden="true">↻</span></button>
     </div>
-    <ul id="story-list" class="story-list"></ul>
+    <div class="today-list" id="todayGrid"></div>
   </section>
 
-  <footer class="lib-footer">
-    <p><strong>Hero shelf:</strong> Lodge &amp; Roosevelt's <em>Hero Tales from American History</em> (1895), Lady Gregory's <em>Gods and Fighting Men</em> (1904 — Tuatha de Danaan and the Fianna of Finn MacCool), Haaren's <em>Famous Men of the Middle Ages</em> (1904), Baldwin's <em>Fifty Famous Stories Retold</em>, <em>Old Greek Stories</em>, and <em>Hero Tales</em>, and Steel's <em>English Fairy Tales</em>. <strong>Fables shelf:</strong> Aesop's fables (Milo Winter ed.) and animal folk-tales. All in the public domain, via Project Gutenberg.</p>
-  </footer>
+  <section class="tile-section">
+    <h2 class="tile-section-title">The tales</h2>
+    <p class="tile-section-sub">Public-domain stories, made for reading aloud. Every one marked honestly with how long it takes.</p>
+    <div class="rtile-list" id="tiles-tales"></div>
+  </section>
+
+  <section class="tile-section">
+    <h2 class="tile-section-title">The chronicles</h2>
+    <p class="tile-section-sub">Written for this app rather than lifted from a book — the works, the stands and the warnings, with the cost of each one stated plainly.</p>
+    <div class="rtile-list" id="tiles-chronicles"></div>
+  </section>
+
+  <section class="tile-section">
+    <h2 class="tile-section-title">Tools</h2>
+    <div class="rtile-list" id="tiles-tools"></div>
+  </section>
+
 </main>
+
+<footer class="shell-footer">
+  <b>The tales:</b> Lodge &amp; Roosevelt's <i>Hero Tales from American History</i>, Lady Gregory's <i>Gods and Fighting Men</i>, Haaren's <i>Famous Men of the Middle Ages</i>, Baldwin's <i>Fifty Famous Stories Retold</i>, <i>Old Greek Stories</i> and <i>Hero Tales</i>, Steel's <i>English Fairy Tales</i>, and Aesop. All public domain, via Project Gutenberg.<br>
+  <b>The chronicles</b> are written for this app. Figures are the commonly cited ones and are hedged where historians disagree.
+</footer>
+
+<div class="ht-modal-overlay" id="htModal" aria-hidden="true">
+  <div class="ht-modal" role="dialog" aria-modal="true" aria-labelledby="htTitle">
+    <button class="ht-mclose" id="htClose" aria-label="Close">×</button>
+    <div class="ht-mhead"><span class="ht-mkicker" id="htKicker"></span><h2 class="ht-mtitle" id="htTitle"></h2></div>
+    <div class="ht-mbody" id="htBody"></div>
+  </div>
+</div>
 
 <div id="version-pill" class="version-pill"></div>
 
-<script src="assets/app.js"></script>
+<script src="assets/tts.js"></script>
+<script src="assets/shell.js"></script>
+<script src="assets/daily-data.js"></script>
+<script src="assets/feats-data.js"></script>
+<script src="assets/stands-data.js"></script>
+<script src="assets/ledger-data.js"></script>
+<script src="assets/home.js"></script>
 </body>
 </html>

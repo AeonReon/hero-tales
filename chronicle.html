@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#A96A15">
+<title>Hero Tales</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="assets/shell.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="story-page">
+
+<main class="story-main">
+  <article id="chronicle" class="story">
+    <div class="story-tradition" id="c-shelf"></div>
+    <h1 id="c-title" class="story-title">Loading…</h1>
+    <div id="c-kicker" class="chronicle-kicker"></div>
+    <div id="c-meta" class="story-meta"></div>
+    <div id="c-body" class="story-body"></div>
+    <div id="c-cost" class="chronicle-cost" hidden></div>
+    <div id="c-reckoning" class="chronicle-reckoning" hidden></div>
+    <div class="story-source" id="c-source"></div>
+  </article>
+
+  <div class="story-controls">
+    <button id="read-aloud" class="ctrl-btn primary" type="button">▶︎ Read aloud</button>
+    <button id="another" class="ctrl-btn" type="button">Another</button>
+    <button id="put-away" class="ctrl-btn ghost" type="button">Put away</button>
+  </div>
+</main>
+
+<div id="version-pill" class="version-pill"></div>
+
+<script src="assets/tts.js"></script>
+<script src="assets/shell.js"></script>
+<script src="assets/feats-data.js"></script>
+<script src="assets/stands-data.js"></script>
+<script src="assets/ledger-data.js"></script>
+<script src="assets/chronicle.js"></script>
+</body>
+</html>

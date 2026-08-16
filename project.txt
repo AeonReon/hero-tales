@@ -1,5 +1,5 @@
 Project: Hero Tales
-Type: Public-domain story library — short hero tales for telling aloud
+Type: Story library + daily feed — greatness, one day at a time
 Inspiration: What the Romans and Greeks did with their children — telling great stories of courage, cleverness, mercy and loyalty to inspire greatness
 Target: Parents reading to children/teens around the campfire, at bedtime, or on a quiet evening
 
@@ -24,7 +24,20 @@ Plus, in /data/ for future parsing:
 - Pyle — King Arthur — Gutenberg #903
 - Hawthorne — A Wonder Book for Girls and Boys — Gutenberg #32242
 
-Total v1: 81 stories.
+Total: 304 tales (154 hero, 150 fable) + 37 written chronicles.
+
+The chronicles (v10) — written for the app, not public domain:
+- Great works (16): Panama, Brooklyn Bridge, London's sewers, the Atlantic
+  cable, Bell Rock, the Sierra Nevada tunnels, Hagia Sophia, the Via Appia,
+  the Forth Bridge, the Thames Tunnel, Hoover Dam, the Erie Canal, the Delta
+  Works, Apollo, the Crystal Palace, the Trans-Siberian.
+- The stands (12): Malta 1565, Vienna 1683, Constantinople 717, Saragarhi,
+  Camaron, Jellalabad, the Winter War, the James Caird, Magellan, Gibraltar,
+  Lepanto, Rorke's Drift.
+- The ledger (9): the White Sea Canal, Mittelbau-Dora, St Petersburg, the
+  Great Leap Forward, the Congo Free State, Cecil Rhodes, the Sui Grand Canal,
+  the Aral Sea, the Berlin Wall.
+  Told as warnings. See CLAUDE.md for the rules this shelf follows.
 
 Build:
   python3 scripts/build_library.py
@@ -36,10 +49,22 @@ Deploy:
 
 Structure:
 - /                          static PWA root (vercel serves as-is)
-- /index.html                library landing
+- /index.html                launcher — hero, "For today" feed, shelf tiles
+- /tales.html                browse the two public-domain shelves
+- /chronicles.html           browse the three written shelves
+- /chronicle.html            single chronicle reader (cost + reckoning)
 - /story.html                single story reader (campfire toggle)
-- /assets/style.css          warm-cream aesthetic, gradient outlines
-- /assets/app.js             library page logic
+- /keep.html                 the shelf-keeper — put away / bring back / export
+- /random.html               surprise me, across every shelf
+- /curate.html               walk the seed tales, approve or disapprove
+- /assets/shell.css          the shared design language (Classical Mind shell)
+- /assets/shell.js           shared plumbing: icons, shelves, the Keeper, PWA
+- /assets/home.js            launcher + daily feed
+- /assets/tales.js           tale browse       /assets/chronicles.js  chronicle browse
+- /assets/chronicle.js       chronicle reader  /assets/keep.js        shelf-keeper
+- /assets/style.css          page styles: story reader, campfire, keeper
+- /assets/daily-data.js      QUOTES / THOUGHTS / MAXIMS / WORDS for the feed
+- /assets/{feats,stands,ledger}-data.js   the chronicles
 - /assets/story.js           story page logic, TTS, campfire mode
 - /stories/library.json      story index (no bodies, for fast loading)
 - /stories/bodies.json       { id: body } map

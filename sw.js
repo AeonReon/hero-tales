@@ -1,17 +1,33 @@
-// Hero Tales — minimal SW.
-// Cache first for the shell + library JSON. Bump CACHE_VERSION on deploys with breaking changes.
+// Hero Tales — service worker.
+// Cache-first for the shell and the library JSON, with a background
+// revalidate. Bump CACHE on every ship so a stale shell cannot survive.
 
-const CACHE = 'hero-tales-v6';
+const CACHE = 'hero-tales-v11';
 const ASSETS = [
   './',
   'index.html',
+  'tales.html',
+  'chronicles.html',
+  'chronicle.html',
   'story.html',
+  'keep.html',
+  'random.html',
   'curate.html',
+  'assets/shell.css',
   'assets/style.css',
-  'assets/app.js',
+  'assets/shell.js',
+  'assets/home.js',
+  'assets/tales.js',
+  'assets/chronicles.js',
+  'assets/chronicle.js',
   'assets/story.js',
+  'assets/keep.js',
   'assets/curate.js',
   'assets/tts.js',
+  'assets/daily-data.js',
+  'assets/feats-data.js',
+  'assets/stands-data.js',
+  'assets/ledger-data.js',
   'stories/library.json',
   'stories/bodies.json',
   'manifest.json',
@@ -38,7 +54,6 @@ self.addEventListener('fetch', (e) => {
   e.respondWith(
     caches.match(e.request).then(cached => {
       if (cached) {
-        // Revalidate in background
         fetch(e.request).then(res => {
           if (res && res.ok) caches.open(CACHE).then(c => c.put(e.request, res.clone()));
         }).catch(() => {});

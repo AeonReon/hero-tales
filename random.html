@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#A96A15">
+<title>Surprise me — Hero Tales</title>
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="stylesheet" href="assets/shell.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="browse">
+<main class="shell-main">
+  <div class="ht-hero"><h1>Surprise me.</h1><p>One thing at random from any shelf.</p></div>
+  <div class="empty-note" id="dice">Rolling…</div>
+</main>
+<script src="assets/shell.js"></script>
+<script src="assets/feats-data.js"></script>
+<script src="assets/stands-data.js"></script>
+<script src="assets/ledger-data.js"></script>
+<script>
+// Pull from every shelf at once, weighting so the written chronicles are not
+// drowned out by the three hundred public-domain tales.
+renderAppbar({ back: 'index.html', title: 'Surprise me' });
+
+function go(list) {
+  const pick = list[Math.floor(Math.random() * list.length)];
+  location.replace(pick.href);
+}
+
+const pool = Keeper.keep(window.CHRONICLES || [])
+  .map(c => ({ id: c.id, href: `chronicle.html?id=${encodeURIComponent(c.id)}` }));
+
+fetch('stories/library.json', { cache: 'no-store' })
+  .then(r => r.json())
+  .then(data => {
+    const tales = Keeper.keep(data.stories || [])
+      .map(s => ({ id: s.id, href: `story.html?id=${encodeURIComponent(s.id)}` }));
+    // Half the rolls land on a chronicle, half on a tale, when both exist.
+    const chosen = (pool.length && (!tales.length || Math.random() < 0.5)) ? pool : tales;
+    if (chosen.length) go(chosen);
+    else document.getElementById('dice').textContent = 'Nothing on the shelf.';
+  })
+  .catch(() => { if (pool.length) go(pool); else document.getElementById('dice').textContent = 'Could not load the shelf.'; });
+</script>
+</body>
+</html>

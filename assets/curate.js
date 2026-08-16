@@ -279,20 +279,7 @@ document.getElementById('btn-restart').onclick = () => {
   advance();
 };
 
-// --- build stamp ---
-let _initialStamp = null;
-async function checkBuildStamp() {
-  try {
-    const res = await fetch('build-stamp.json', { cache: 'no-store' });
-    const { stamp } = await res.json();
-    if (_initialStamp === null) {
-      _initialStamp = stamp;
-      const pill = document.getElementById('version-pill');
-      if (pill) pill.textContent = `v${String(stamp).slice(-6)}`;
-    }
-  } catch {}
-}
-checkBuildStamp();
+bootShell();
 
 window.addEventListener('beforeunload', stopReading);
 
@@ -301,7 +288,3 @@ load().catch(err => {
   console.error(err);
   document.getElementById('curate-loading').textContent = 'Could not load. Check connection.';
 });
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(() => {});
-}

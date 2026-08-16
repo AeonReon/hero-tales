@@ -3,24 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#FAF6EC">
+<meta name="theme-color" content="#A96A15">
 <title>Hero Tales</title>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Hero Tales">
+<link rel="stylesheet" href="assets/shell.css">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="story-page">
 
-<header class="story-header">
-  <a href="index.html" class="back-link">← Library</a>
-  <div class="header-actions">
-    <button id="voice-toggle" class="voice-toggle" title="Switch reading voice">🌐 Echo</button>
-    <button id="campfire-toggle" class="campfire-btn" aria-pressed="false" title="Campfire mode — bigger text, fewer controls">🔥 Campfire</button>
+<div class="story-toolbar">
+  <a href="index.html" class="tb-link">← Home</a>
+  <div class="tb-actions">
+    <button id="voice-toggle" class="voice-toggle" type="button" title="Switch reading voice">🌐 Echo</button>
+    <button id="campfire-toggle" class="campfire-btn" type="button" aria-pressed="false" title="Campfire mode — bigger text, fewer controls">🔥 Campfire</button>
   </div>
-</header>
+</div>
 
 <main class="story-main">
   <article id="story" class="story">
@@ -32,16 +33,16 @@
   </article>
 
   <div class="story-controls">
-    <button id="read-aloud" class="ctrl-btn primary">▶︎ Read aloud</button>
-    <button id="another" class="ctrl-btn">Another tale</button>
-    <a href="index.html" class="ctrl-btn ghost">Choose</a>
+    <button id="read-aloud" class="ctrl-btn primary" type="button">▶︎ Read aloud</button>
+    <button id="another" class="ctrl-btn" type="button">Another tale</button>
+    <button id="put-away" class="ctrl-btn ghost" type="button">Put away</button>
   </div>
 
   <div id="story-verdict" class="story-verdict" hidden>
     <p class="story-verdict-label">Does this match what you're after — bravery, courage, daring greatness?</p>
     <div class="story-verdict-buttons">
-      <button id="vt-disapprove" class="ctrl-btn disapprove">✗ Disapprove</button>
-      <button id="vt-approve" class="ctrl-btn approve">✓ Approve</button>
+      <button id="vt-disapprove" class="ctrl-btn disapprove" type="button">✗ Disapprove</button>
+      <button id="vt-approve" class="ctrl-btn approve" type="button">✓ Approve</button>
     </div>
   </div>
 </main>
@@ -50,6 +51,7 @@
 <div id="voice-toast" class="voice-toast" hidden></div>
 
 <script src="assets/tts.js"></script>
+<script src="assets/shell.js"></script>
 <script src="assets/story.js"></script>
 </body>
 </html>
