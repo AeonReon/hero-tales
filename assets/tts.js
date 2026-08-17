@@ -21,6 +21,13 @@ const TTS = (() => {
   const VOICE_AGENT_KEY = (typeof window !== 'undefined' && window.VOICE_AGENT_KEY) || '1234';
   const ECHO_VOICE = 'am_echo';
   const CHUNK_MAX = 280;
+  // How many chunks to fetch ahead of the one now playing. Short cards read as
+  // short chunks (3-4s each) — shorter than Kokoro takes to generate the next
+  // one — so a single-chunk lookahead stalls between almost every sentence.
+  // Racing several chunks in parallel builds a buffer during the first chunk
+  // so playback never has to wait. (Books read smoothly on 1 because their
+  // ~13s chunks already hide generation.)
+  const LOOKAHEAD = 4;
 
   const state = {
     rate: 1.0,
@@ -54,7 +61,7 @@ const TTS = (() => {
     // the moment the screen locks, so it's foreground-only.
     audioEl: null,
     blobUrls: new Set(),       // currently-allocated blob URLs (revoked on stop)
-    prefetchPromise: null,     // promise for the chunk we're racing to fetch
+    prefetch: new Map(),       // idx -> promise<blobUrl|null> for chunks racing ahead
     abortController: null,
   };
 
@@ -153,6 +160,21 @@ const TTS = (() => {
     return url;
   }
 
+  // Keep the fetch pipeline full: make sure chunks [fromIdx .. fromIdx+LOOKAHEAD)
+  // are all being fetched in parallel. Each entry in state.prefetch resolves to
+  // a ready-to-play blob URL (or null if that fetch failed). Called at the start
+  // of every chunk so the window slides forward as playback advances.
+  function ensurePrefetch(sessionId, fromIdx) {
+    if (sessionId !== state.sessionId || !state.playing) return;
+    const end = Math.min(state.chunks.length, fromIdx + LOOKAHEAD);
+    for (let i = fromIdx; i < end; i++) {
+      if (state.prefetch.has(i)) continue;
+      const p = fetchChunkAsBlobUrl(state.chunks[i], state.abortController.signal)
+        .catch(e => { if (e.name !== 'AbortError') console.warn('[TTS] prefetch failed:', e.message); return null; });
+      state.prefetch.set(i, p);
+    }
+  }
+
   // Play the chunk queue through a single persistent <audio> element.
   // When chunk N ends, swap in N+1. Pre-fetches N+1 while N plays so the
   // gap between chunks is as short as possible (still won't be sample-
@@ -164,13 +186,12 @@ const TTS = (() => {
 
     let blobUrl;
     try {
-      // If the prefetcher already has this chunk ready, use it; otherwise fetch.
-      if (state.prefetchPromise && state.prefetchPromise._idx === idx) {
-        blobUrl = await state.prefetchPromise;
-      } else {
-        blobUrl = await fetchChunkAsBlobUrl(state.chunks[idx], state.abortController.signal);
-      }
+      // Make sure this chunk + the look-ahead window are all racing in
+      // parallel, then take this chunk's ready blob URL off the queue.
+      ensurePrefetch(sessionId, idx);
+      blobUrl = await state.prefetch.get(idx);
       if (sessionId !== state.sessionId || !state.playing) return;
+      if (!blobUrl) throw new Error('chunk fetch failed');
     } catch (e) {
       if (e.name === 'AbortError' || sessionId !== state.sessionId || !state.playing) return;
       console.warn('[TTS] Echo unreachable, falling back to device voice:', e.message);
@@ -186,6 +207,7 @@ const TTS = (() => {
     audio.onended = () => {
       if (sessionId !== state.sessionId) return;
       try { URL.revokeObjectURL(blobUrl); state.blobUrls.delete(blobUrl); } catch (_) {}
+      state.prefetch.delete(idx);
       if (state.onChunkEnd) state.onChunkEnd(idx);
       playEchoFromIndex(sessionId, idx + 1);
     };
@@ -214,17 +236,9 @@ const TTS = (() => {
       return;
     }
 
-    // Pre-fetch the next chunk while this one plays so the swap gap stays
-    // small. Track the index on the promise so we don't reuse it for a
-    // different chunk after a stop/replay.
-    if (idx + 1 < state.chunks.length) {
-      const p = fetchChunkAsBlobUrl(state.chunks[idx + 1], state.abortController.signal)
-        .catch(e => { if (e.name !== 'AbortError') console.warn('[TTS] prefetch failed:', e.message); return null; });
-      p._idx = idx + 1;
-      state.prefetchPromise = p;
-    } else {
-      state.prefetchPromise = null;
-    }
+    // Keep the pipeline full while this chunk plays: race the next LOOKAHEAD
+    // chunks in parallel so the one after this is already decoded and waiting.
+    ensurePrefetch(sessionId, idx + 1);
   }
 
   // Web Speech path: speak the WHOLE page text in a single utterance and
@@ -335,7 +349,7 @@ const TTS = (() => {
       try { URL.revokeObjectURL(url); } catch (_) {}
     }
     state.blobUrls.clear();
-    state.prefetchPromise = null;
+    state.prefetch.clear();
 
     state.chunks = [];
     state.cursor = 0;
