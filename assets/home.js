@@ -83,9 +83,18 @@ const chroniclesOn = shelf => chroniclesOnShelf().filter(x => x.shelf === shelf)
 let library = [];   // filled in when stories/library.json lands
 
 // A chronicle card: teaser in the bar, the opening of the tale in the modal,
-// with the cost attached and a link through to the full page.
+// then a link through to the full page.
+//
+// The daily card is kept UPBEAT for the good shelves: great works and stands
+// show the scale and the breakthrough, not the cost — the cost lives on the
+// full page. The ledger is the exception: it is the cautionary shelf, so its
+// daily card keeps the cost, because that is the whole point of it.
 function chronicleCard(entry, kicker, glyph) {
   const sh = shelfOf(entry.shelf);
+  const upbeat = entry.shelf !== 'ledger';
+  const note = upbeat
+    ? (entry.reckoning ? `<p class="ht-note"><b>What made it work.</b> ${esc(entry.reckoning)}</p>` : '')
+    : (entry.cost ? `<p class="ht-note"><b>The cost.</b> ${esc(entry.cost)}</p>` : '');
   return bar({
     c: entry.color || sh.c, cd: entry.colorDeep || sh.cd,
     glyph, kicker,
@@ -98,7 +107,7 @@ function chronicleCard(entry, kicker, glyph) {
       html:
         `<p class="ht-source" style="margin-top:0">${esc(entry.kicker)}</p>`
         + `<p>${esc(entry.body[0])}</p>`
-        + (entry.cost ? `<p class="ht-note"><b>The cost.</b> ${esc(entry.cost)}</p>` : '')
+        + note
         + `<a class="ht-morelink" href="chronicle.html?id=${encodeURIComponent(entry.id)}">Read the whole thing →</a>`
     })
   });
