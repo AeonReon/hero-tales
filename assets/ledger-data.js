@@ -215,6 +215,137 @@ window.CHRONICLES = (window.CHRONICLES || []).concat([
   ],
   cost: 'At least 140 dead at the Berlin Wall and many more along the inner-German border; a divided city and a population held for twenty-eight years by force.',
   reckoning: 'When a government has to build works of that quality to stop its own people leaving, the argument about that government is finished. Watch which way the guns point.'
+},
+
+{
+  id: 'suez-canal',
+  shelf: 'ledger',
+  title: 'The Suez Canal',
+  kicker: 'A hundred and sixty kilometres cut through the desert to join two seas the earth had kept apart',
+  where: 'Isthmus of Suez, Egypt',
+  when: '1859–1869',
+  who: 'Ferdinand de Lesseps · Sa\'id and Isma\'il of Egypt',
+  icon: 'canal',
+  color: '#1F7A8C', colorDeep: '#12525E',
+  teaser: 'A French diplomat with no engineering training talked an empire into letting him cut a sea-level channel across the desert — and changed the map of world trade for good.',
+  body: [
+    'For four thousand years anything moving between the Mediterranean and the Indian Ocean had to sail all the way round Africa. Ferdinand de Lesseps, a former French consul with charm, patience and no formal engineering, was convinced a sea-level canal could be cut straight across the Isthmus of Suez. In 1854 he obtained a concession from his friend Sa\'id, the ruler of Egypt, to form a company and dig it. Almost every authority in Britain, the great maritime power, called it impossible or a swindle, and London opposed it for a decade — rightly sensing what it would do to the route to India.',
+    'The work ran from 1859 to 1869 across a hundred and sixty-odd kilometres of desert, salt marsh and shallow lake, with so little fresh water on site that a supply canal had to be dug from the Nile just to keep the workforce alive. The early years were done by corvée, the traditional Egyptian labour draft: something like 400,000 peasants were rotated through the works over its course, tens of thousands at a time, digging by hand. When international pressure forced the corvée to be scaled back, de Lesseps brought in the machines that finished it — custom dredgers and excavators that shifted the bulk of some seventy million cubic metres of spoil.',
+    'The human cost of those early years was heavy: deaths from cholera, exhaustion and thirst ran into the tens of thousands, though the popular figure of 120,000 dead is now regarded as far too high and rests on no good record. The canal opened in November 1869 with an imperial festival attended by half the royalty of Europe, and it worked at once and completely — the sea journey from London to Bombay fell by around 40 per cent, and within a few years most of the world\'s steam shipping was passing through it.',
+    'The money is where the story turns. Egypt had taken on ruinous debt, partly for the canal and the modernisation around it, and by 1875 the ruler Isma\'il was bankrupt. He sold Egypt\'s 44 per cent shareholding to the British government, which Disraeli bought overnight on a loan from the Rothschilds — and Britain went from the canal\'s chief opponent to its largest shareholder. Debt then handed the European powers control of Egypt\'s finances; unrest followed; and in 1882 Britain invaded and occupied the country, an occupation that lasted in one form or another into the 1950s.',
+    'The canal itself never stopped mattering. Nasser nationalised it in 1956 and set off an international crisis; war closed it for eight years after 1967; a single grounded container ship blocked it for six days in 2021 and threw world trade into disorder. It remains one of the few places on earth where a few kilometres of water set the price of nearly everything.'
+  ],
+  cost: 'Tens of thousands of forced labourers dead in the early digging, and a mountain of Egyptian debt that cost the country first its financial independence and then its sovereignty, under British occupation from 1882.',
+  reckoning: 'The canal is one of the most useful things ever built, and it helped hand Egypt to its creditors — both are true, and the engineering no more caused the debt than the debt dug the canal. A magnificent achievement and a national catastrophe ran through the very same ground.'
+},
+
+{
+  id: 'manhattan-project',
+  shelf: 'ledger',
+  title: 'The Manhattan Project',
+  kicker: 'In three years, from a standing start, a country built a new kind of fire',
+  where: 'United States',
+  when: '1942–1945',
+  who: 'Leslie Groves · J. Robert Oppenheimer · some 130,000 workers',
+  icon: 'flame',
+  color: '#8C3A1E', colorDeep: '#57230F',
+  teaser: 'To build the first atomic bomb the United States raised three secret cities, spent two billion wartime dollars, and told almost none of the 130,000 people involved what they were making.',
+  body: [
+    'When physicists established in 1938–39 that a uranium nucleus could be split and might sustain a chain reaction, the fear among American and émigré scientists was simple: Germany could get there first. A small research effort became, under the US Army and General Leslie Groves, one of the largest industrial undertakings ever attempted in the time available — and it had to invent most of its own methods as it went.',
+    'The scale is hard to credit. Three secret cities were built from nothing: Oak Ridge in Tennessee, where vast plants enriched uranium and the population went from a few thousand to seventy-five thousand; Hanford in Washington, which made plutonium in the first industrial-scale reactors; and Los Alamos in New Mexico, where the weapon itself was designed under the physicist J. Robert Oppenheimer. At its height the project employed around 130,000 people and cost roughly two billion dollars in 1945 money. Compartmentalisation was total; almost none of the workers knew what they were building.',
+    'It worked. The first device was tested at Trinity in the New Mexico desert on 16 July 1945; watching it, Oppenheimer reached for a line from the Bhagavad Gita, "now I am become Death, the destroyer of worlds." Germany had already surrendered. The two bombs were used on Japan, at Hiroshima and Nagasaki that August, killing well over a hundred thousand people, most of them civilians, and Japan surrendered within days.',
+    'Whether that ended the war and spared the far greater casualties an invasion of Japan was expected to cost, or whether it was an atrocity a nearly beaten enemy did not require, is one of the genuinely unsettled arguments of the century, and honest people hold both views. What is not in doubt is that the project compressed decades of physics and industry into three years and opened the nuclear age — the bomb, but also the reactor, the ships that run on it, and a great-power peace held in place for seventy years by fear of the thing.',
+    'Most of its scientists spent the rest of their lives arguing about what they had done. Oppenheimer pressed for international control of the weapon and had his security clearance stripped in 1954 for his trouble. The knowledge, once it existed, could not be handed back.'
+  ],
+  cost: 'Well over a hundred thousand killed by the two bombs, most of them civilians; a weapon that has hung over every generation since; and a scientific establishment that never made peace with its own success.',
+  reckoning: 'The same discovery is a weapon that can end civilisations and an engine that lights cities, and nothing in the physics tells you which to build. It is the clearest case on the shelf of an achievement whose meaning is settled entirely by what people decide to do with it.'
+},
+
+{
+  id: 'great-wall',
+  shelf: 'ledger',
+  title: 'The Great Wall of China',
+  kicker: 'A wall long enough to cross a continent, built to keep the steppe out — until a general opened the gate',
+  where: 'Northern China',
+  when: 'Ming dynasty, 1368–1644 (and long before)',
+  who: 'The Ming emperors · conscripts, soldiers and convicts',
+  icon: 'wall',
+  color: '#8A5A2B', colorDeep: '#573818',
+  teaser: 'The wall everyone pictures is mostly the work of one dynasty that spent two centuries, and a fortune in lives, fortifying its northern frontier in brick and stone.',
+  body: [
+    'There was never one wall. Chinese states had built frontier walls of rammed earth since before the first emperor unified the country in 221 BC. What visitors walk today — dressed stone, brick, watchtowers strung along the ridgelines north of Beijing — is overwhelmingly the work of the Ming, who after 1368 spent much of two centuries rebuilding the northern defences against the Mongols on a scale no earlier dynasty had attempted. The best-preserved Ming line runs some 8,850 kilometres; counting every wall of every period, the total passes 21,000.',
+    'It was a system, not a fence: a rampart wide enough to move men and horses along the top, studded with signal towers that could pass warning of a raid hundreds of kilometres in a few hours by smoke and fire, backed by garrisons and granaries. Building it across desert, mountain and gorge, and feeding the works in country that grew nothing, was an organisational feat as much as an engineering one.',
+    'It was raised by conscript labour — soldiers in work battalions, convicts serving sentences, peasants levied under the corvée — in hard country and worse weather, on short rations. The death toll is genuinely unknown: the figures often quoted, up to 400,000 or even a million, are guesses resting on no reliable record, and the old story that the dead were built into the wall is a legend, since corpses would only have weakened it. That the human cost over two centuries was enormous is not in doubt; the number is.',
+    'And the hard fact hangs over all of it: in 1644 the wall did not save the dynasty that built it. A Ming general, Wu Sangui, holding the great fortified pass at Shanhaiguan where the wall meets the sea, chose to open the gate to the Manchus rather than submit to a rebel who had just taken Beijing. The Qing came through and ruled China for the next 268 years. The wall was only ever as strong as the loyalty of the man holding the gate.',
+    'None of which stopped it becoming, in the centuries since, the enduring emblem of the country — the one human structure almost everyone can name, and visible proof of what a civilisation will spend to hold a line.'
+  ],
+  cost: 'An unknown but vast number of labourers dead over two centuries, a colossal share of the Ming state\'s resources — and a frontier breached in the end not by storming the wall but by a general opening a gate.',
+  reckoning: 'It is at once one of the great works of the human hand and a monument to the limits of walls: the strongest fortification on earth failed at the single point where a man decided not to hold it. Whether it bought the security it was built for, or only ever looked as though it might, is still argued.'
+},
+
+{
+  id: 'aswan-high-dam',
+  shelf: 'ledger',
+  title: 'The Aswan High Dam',
+  kicker: 'He tamed the Nile\'s flood for the first time in history — and stopped the silt that had fed Egypt for five thousand years',
+  where: 'Aswan, Egypt',
+  when: '1960–1970',
+  who: 'Gamal Abdel Nasser · Soviet engineers',
+  icon: 'dam',
+  color: '#2F7A6B', colorDeep: '#1B4C43',
+  teaser: 'To free Egypt from the Nile\'s yearly flood and drought, Nasser dammed the river with Soviet money — and drowned a homeland and its temples behind it.',
+  body: [
+    'For all of recorded history Egypt had lived and died by the Nile\'s annual flood: a good inundation fed the country, a poor one meant famine, and no one could choose which came. Gamal Abdel Nasser made mastering it the centrepiece of an independent Egypt. When the United States and Britain withdrew their offer to fund a high dam at Aswan in 1956, he nationalised the Suez Canal to pay for it — touching off the Suez Crisis — and then took the money and the engineers from the Soviet Union instead.',
+    'Built between 1960 and 1970, the dam is a colossus: an embankment over three and a half kilometres long holding back Lake Nasser, one of the largest reservoirs on earth, five hundred kilometres long. For the first time the flood could be stored in the high years and released in the low ones. It ended the ancient cycle of flood and famine, carried Egypt through the severe droughts of the 1980s that wrecked much of the region, opened a great deal of new farmland, and for a time its power station supplied around half the country\'s electricity.',
+    'The costs came in three kinds. Around a hundred thousand people — Egyptian and Sudanese Nubians — were moved off land their families had held for millennia and resettled far away, a whole culture displaced by the rising lake. The monuments of ancient Nubia would have drowned with them, and an eight-year UNESCO campaign cut the temples of Abu Simbel from the cliff and lifted them, block by block, sixty metres higher — one of the first great acts of international heritage rescue, born directly of the dam.',
+    'And the river itself changed. The flood had always carried rich silt that renewed the fields and the Delta; the dam now traps it behind the wall. Egyptian farming became dependent on artificial fertiliser, the Mediterranean began eating into the undefended Delta coast, and the year-round still water in the canals gave the snails that carry bilharzia a permanent home — though how far the disease actually rose is debated. Egypt swapped a wild river it could not control for a tame one whose gifts it now has to buy.',
+    'By the plainest measure it was a success: the famines stopped, the lights came on, and the population it feeds has more than tripled since. What it cost was a lost homeland, a changed river, and a country that can never again simply wait for the water to come.'
+  ],
+  cost: 'Around a hundred thousand Nubians displaced and a homeland drowned; the end of the silt that fertilised Egypt for five thousand years; a coastline and a river permanently altered.',
+  reckoning: 'It did exactly what it was built to do, and the bill for doing it will be paid forever, in fertiliser and lost coast. Whether five thousand years of the river\'s own renewal was worth trading for a switch that turns the flood on and off is the kind of question this shelf exists to leave open.'
+},
+
+{
+  id: 'channel-tunnel',
+  shelf: 'ledger',
+  title: 'The Channel Tunnel',
+  kicker: 'An idea dreamed of since Napoleon, feared for two centuries, and finally dug — at nearly double the price',
+  where: 'Dover Strait, England–France',
+  when: '1988–1994',
+  who: 'Eurotunnel · some 13,000 workers',
+  icon: 'rail',
+  color: '#4F6D7A', colorDeep: '#32464F',
+  teaser: 'Britain and France finally joined their coasts with a fifty-kilometre tunnel under the sea — a triumph of engineering that ruined almost everyone who paid for it.',
+  body: [
+    'A tunnel under the Channel was first seriously put to Napoleon in 1802, and again and again through the nineteenth century; the sticking point was never really the digging but the fear, mostly British, of handing an invader a dry road into England. Trial workings were begun and abandoned in the 1880s on exactly those grounds. It took until 1988 for the two governments to commit, and the decisive condition was that no public money would build it — it would be financed entirely by private investors, through a company called Eurotunnel.',
+    'The engineering was a genuine triumph. Eleven boring machines dug three parallel tunnels — two for trains, a service tunnel between them — over fifty kilometres, thirty-eight of them under the seabed, the longest undersea stretch of tunnel in the world. The teams driving from the English and French sides met beneath the Channel in 1990 within a couple of centimetres of true. Around 13,000 workers built it in six years; ten of them were killed during construction. Queen Elizabeth II and President Mitterrand opened it in May 1994.',
+    'The money was a rout. The build came in around 80 per cent over budget — some £4.65 billion against the original estimate, and higher still by later accountings — and the traffic and revenue fell far short of the forecasts that had drawn people in. Eurotunnel spent its early years crushed under billions in debt; its share price collapsed; and the ordinary investors urged to buy in, many of them small British and French savers, lost most of their money in a string of restructurings.',
+    'And yet the thing is simply there, and it works. You can board a train in London and be in Paris in a little over two hours; freight crosses on a shuttle; the Strait, an obstacle for all of recorded history, is now a thirty-five-minute ride. The tunnel that bankrupted its backers became a piece of ordinary European infrastructure it is now impossible to imagine living without.'
+  ],
+  cost: 'Ten workers killed in construction, and billions lost by the banks and the small shareholders who financed it, wiped out in successive debt restructurings.',
+  reckoning: 'The engineers delivered everything they promised and the finances delivered a wreck — which raises the uncomfortable possibility that some works worth building could never be built if the people paying knew the true price in advance. The passengers got the tunnel; the investors got the bill.'
+},
+
+{
+  id: 'darien-scheme',
+  shelf: 'ledger',
+  title: 'The Darien Scheme',
+  kicker: 'A small nation bet a quarter of its wealth on a colony in the jungle, and lost the bet and its independence',
+  where: 'Isthmus of Panama',
+  when: '1698–1700',
+  who: 'The Company of Scotland · William Paterson',
+  icon: 'anchor',
+  color: '#3A5E8C', colorDeep: '#243E60',
+  teaser: 'Scotland tried to make itself a trading power in a single stroke by planting a colony on the isthmus of Panama. It failed so completely that it helped end Scotland as an independent country.',
+  body: [
+    'In the 1690s Scotland was poor, shut out of England\'s trade monopolies, and desperate for a way into the wealth the age was making. William Paterson — a Scot who had helped found the Bank of England — had a dazzling idea: plant a colony at Darien, on the isthmus of Panama, and it would become the emporium of the world, the place where goods crossed between the Atlantic and the Pacific by land instead of sailing round Cape Horn. On a map, it was brilliant.',
+    'The nation believed him. The Company of Scotland raised the money by public subscription, and the response was both extraordinary and ruinous: something like a quarter of all the liquid capital in Scotland was poured in — by nobles, merchants, burghs and ordinary people — until much of the country had a personal stake in it. In 1698 five ships carried around 1,200 colonists out to found "Caledonia."',
+    'Almost everything that could go wrong did. The site was fever country, and the settlers sickened and died in numbers. The goods they had brought to trade — wigs, combs, heavy woollen cloth — were useless in the tropics. England, not wanting to provoke Spain, which claimed the coast, forbade its own colonies to send any help. The Spanish moved against them. The first colony was abandoned; a second fleet arrived to find the huts empty, dug in, was besieged, and surrendered. Of the roughly 2,000 who sailed, only a few hundred ever came home.',
+    'The financial blow to a small country was catastrophic, and it fell at the exact moment England was pressing for a union of the two kingdoms. The 1707 Act of Union included an "Equivalent" — a sum of English money that, among other things, compensated the ruined shareholders of the Company of Scotland. To Scots ever since it has been the argument that will not settle: whether the nation was bought, or rescued, out of a hole it had dug for itself.',
+    'The colony left almost nothing on the ground — a few earthworks lost in the Panamanian jungle. What it left in history was a country that had staked everything on one audacious idea and, in losing, ceased to be a state of its own.'
+  ],
+  cost: 'Around 2,000 colonists dead, a quarter of Scotland\'s liquid wealth lost, and an independent kingdom so weakened that within seven years it was gone.',
+  reckoning: 'The idea was not stupid — two centuries later others cut the Panama Canal a few miles away and grew rich on exactly Paterson\'s insight. It was early, under-resourced and unlucky, and it is the shelf\'s sharpest reminder that the line between a visionary and a fool is often only whether the thing worked.'
 }
 
 ]);

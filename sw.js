@@ -2,7 +2,7 @@
 // Cache-first for the shell and the library JSON, with a background
 // revalidate. Bump CACHE on every ship so a stale shell cannot survive.
 
-const CACHE = 'hero-tales-v15';
+const CACHE = 'hero-tales-v16';
 const ASSETS = [
   './',
   'index.html',
