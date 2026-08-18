@@ -1,21 +1,26 @@
-// ledger-data.js — THE LEDGER.
+// ledger-data.js — GREAT AMBITIONS.
 //
-// The shelf for great power turned to destruction, and for achievements whose
-// scale is undeniable and whose price was monstrous. These are not hero tales
-// and they are not filed as hero tales. They are here because a child who is
-// only ever shown greatness that was also good will not recognise the other
-// kind when it arrives wearing a flag and promising a future.
+// The shelf for the most colossal, audacious undertakings in history — cities
+// raised out of marsh, seas moved, canals and countries made. What sets them
+// apart from the clean triumphs on the Great Works shelf is that their legacy
+// is genuinely mixed: enormous achievement on one side, an enormous cost on
+// the other, and the two do not cancel — they both stand.
 //
-// House rules for this shelf — stricter than the others:
-//  1. State the achievement plainly. Shrinking it to make the villain smaller
-//     is a lie, and it teaches the wrong lesson: that terrible men are feeble.
-//  2. State the cost plainly, with numbers, in the same voice. No softening.
-//  3. `reckoning` is the warning. One or two lines. It is the only place in
-//     this app where the writer is allowed to say what a thing means.
+// House rules for this shelf:
+//  1. State the achievement AND the benefit plainly — the scale, the thing
+//     built, who it served and for how long. Shrinking it is a lie.
+//  2. State the cost just as plainly, with numbers. No softening either way.
+//  3. Where the legacy is contested, give the competing perspectives — who
+//     gained, who lost, and what came after — rather than one verdict. The
+//     same events read as triumph or tragedy depending on where you stand.
 //  4. Where historians genuinely differ on figures, give the range.
-//  5. Never present a man on this shelf as a model. The tale is the caution.
+//  5. A fair, concrete test runs through the shelf: did life actually get
+//     better for the people who lived it — safer, richer, more settled, a
+//     place people tried to get into rather than flee? Prefer that observable
+//     test to any narrative. `reckoning` weighs both sides; it is not a
+//     sentence passed. The reader decides.
 //
-// shelf: 'ledger'
+// shelf: 'ledger'  (kept as the internal key; displayed as "Great Ambitions")
 
 window.CHRONICLES = (window.CHRONICLES || []).concat([
 
@@ -131,7 +136,7 @@ window.CHRONICLES = (window.CHRONICLES || []).concat([
   id: 'cecil-rhodes',
   shelf: 'ledger',
   title: 'Cecil Rhodes',
-  kicker: 'He had a country named after him, and it is not called that any more',
+  kicker: 'He controlled the world\'s diamonds by thirty-seven and had two countries by forty',
   where: 'Southern Africa',
   when: '1870–1902',
   who: 'Cecil John Rhodes · Lobengula · Leander Starr Jameson',
@@ -141,11 +146,12 @@ window.CHRONICLES = (window.CHRONICLES || []).concat([
   body: [
     'Rhodes arrived in Natal at seventeen, in poor health, and went to the Kimberley diamond fields. Over the next twenty years he consolidated hundreds of competing claims into De Beers Consolidated Mines, which by 1891 controlled something like ninety per cent of the world\'s rough diamond production — one of the most complete corporate monopolies ever assembled, and the ancestor of the industry that still exists. He did this while intermittently going back to Oxford to finish his degree, which took him eight years.',
     'His ambition was territorial and explicitly imperial: a British corridor from the Cape to Cairo, and, as he wrote in his own confession of faith at twenty-three, the extension of British rule as far as possible on the grounds that the English were the finest race in the world. He obtained a royal charter for the British South Africa Company and used it to occupy the land north of the Limpopo, which was then named Rhodesia after him. He was Prime Minister of the Cape Colony from 1890 to 1896.',
-    'The methods are documented and they are not defensible on their own terms, let alone anyone else\'s. The Rudd Concession of 1888, on which the whole occupation rested, was obtained from King Lobengula of the Ndebele by misrepresentation; when Lobengula grasped what he had signed he repudiated it and sent envoys to London, and was ignored. The Company then took the country by force in two wars, using the Maxim gun against spearmen. As Cape premier Rhodes passed the Glen Grey Act, a labour-tax and land measure that Rhodes himself described as a Bill for Africa and which is generally read as a foundation stone of later segregation policy. In 1895 he sponsored the Jameson Raid, a private armed attempt to overthrow the government of a neighbouring republic; it failed farcically, destroyed his premiership, and helped bring on the Second Boer War.',
+    'The methods were hard and are fully documented. The Rudd Concession of 1888, on which the whole occupation rested, was obtained from King Lobengula of the Ndebele by misrepresentation; when Lobengula grasped what he had signed he repudiated it and sent envoys to London, and was ignored. The Company then took the country by force in two wars, using the Maxim gun against spearmen. As Cape premier Rhodes passed the Glen Grey Act, a labour-tax and land measure he himself called a Bill for Africa and which is generally read as a foundation stone of later segregation policy. In 1895 he sponsored the Jameson Raid, a private armed attempt to overthrow the government of a neighbouring republic; it failed farcically, destroyed his premiership, and helped bring on the Second Boer War.',
+    'The country he founded then had a long and prosperous chapter, and this is the part usually left out. By the mid-twentieth century Rhodesia was one of the more developed economies in the region — a large commercial-farming exporter often called the breadbasket of southern-central Africa, with working cities, industry, railways and a standard of living high for the continent, though under white-minority rule. After that rule ended, the same territory as Zimbabwe went through the land seizures of the 2000s, the collapse of commercial agriculture, and one of the worst hyperinflations ever recorded; millions of Zimbabweans left to find work elsewhere. By the plainest test — whether people were trying to get in or to get out — the country was doing better in its prosperous decades than in the ruin that followed. Which chapter a person leads with tends to decide what they think of the man who started it.',
     'He died at forty-eight. His will left the bulk of his fortune to found the Rhodes Scholarships, which have educated thousands of people from across the world — including many who spent their careers dismantling exactly what he built. Zimbabwe took its name in 1980. His statue was removed from the University of Cape Town in 2015 after a campaign that gave its name to a global argument about which of these facts should stand in bronze.'
   ],
   cost: 'Two conquests, a territory taken on a document obtained by deception, a war provoked by private adventure, and legislation that shaped a century of racial land policy in southern Africa.',
-  reckoning: 'He is on this shelf, not the hero shelf, and the two halves of him do not cancel out — they both stand. Read him as evidence of what enormous will, money and clarity of purpose can do when nothing above them says no.'
+  reckoning: 'The two halves of him do not cancel — the diamond monopoly, the scholarships and the country that prospered for generations under the flag he planted on one side; the deception, the conquests and the racial laws on the other. Both are real. Where you stand decides which one you see first.'
 },
 
 {

@@ -4,7 +4,7 @@
 // purge, and the small helpers the pages share. Loaded before every page
 // script. Nothing here touches the DOM until a page asks it to.
 
-const APP_VERSION = 'v14';
+const APP_VERSION = 'v15';
 
 /* ------------------------------------------------------------------ helpers */
 
@@ -54,9 +54,9 @@ const SHELVES = {
   stand:  { key: 'stand',  name: 'The Stands',   glyph: '🛡', icon: 'shield',
             c: '#8C2F39', cd: '#5E1F26',
             blurb: 'Defence, endurance and daring — weighted toward the ones that are not in every book.' },
-  ledger: { key: 'ledger', name: 'The Ledger',   glyph: '⚖️', icon: 'scales',
-            c: '#4F5560', cd: '#2B3038',
-            blurb: 'Great power turned to destruction. Monumental achievements with a monstrous price. Told as warnings, not as models.' },
+  ledger: { key: 'ledger', name: 'Great Ambitions', glyph: '🏔', icon: 'compass',
+            c: '#A66A1E', cd: '#6E4512',
+            blurb: 'The most colossal, audacious things people ever set out to build or seize — the staggering scale and achievement, and the full price it took. Both are laid out plainly; the verdict is yours.' },
 };
 
 const CHRONICLE_SHELVES = ['feat', 'stand', 'ledger'];
@@ -156,18 +156,36 @@ function ttsStop() { if (typeof TTS !== 'undefined') TTS.stop(); }
 
 /* --------------------------------------------------------------- app bar UI */
 
+// Back = step back to the exact place the reader came from. A real history
+// step lets the browser restore the previous page's scroll position, which a
+// hard link to a page can never do. Fall back to a page only when there is no
+// in-app history to step into (e.g. the page was opened cold from a link).
+function goBack(fallback) {
+  if (window.history.length > 1) window.history.back();
+  else window.location.href = fallback || 'index.html';
+}
+window.goBack = goBack;
+
 function renderAppbar({ back = null, title = 'Hero Tales' } = {}) {
   const left = back
-    ? `<a href="${back}" class="abback">← <span>Back</span></a>`
+    ? `<button type="button" class="abback" onclick="goBack('${back}')">← <span>Back</span></button>`
     : `<img src="icon-192.png" alt="" class="abico">`;
+  // On sub-pages the right slot is a Home button (top of the launcher); on the
+  // launcher itself it is the install prompt.
+  const right = back
+    ? `<a class="hbtn" href="index.html" title="Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V10"/></svg>
+        <span>Home</span>
+      </a>`
+    : `<button class="hbtn" type="button" onclick="openInstall()" title="Add to Home Screen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M12 3l-4 4M12 3l4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg>
+        <span>Get app</span>
+      </button>`;
   document.body.insertAdjacentHTML('afterbegin', `
     <div class="appbar"><div class="row">
       ${left}
       <span class="brand">${esc(title)}</span>
-      <button class="hbtn" type="button" onclick="openInstall()" title="Add to Home Screen">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M12 3l-4 4M12 3l4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg>
-        <span>Get app</span>
-      </button>
+      ${right}
     </div></div>`);
 }
 

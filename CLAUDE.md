@@ -14,10 +14,12 @@ Plutarch said outright that this was why he wrote the *Lives*.
 | **Fables** | Aesop and the animal folk-tales | Public domain |
 | **Great works** | Things built — canal, bridge, cable, dome | Written for the app |
 | **The stands** | Defence, endurance, daring | Written for the app |
-| **The ledger** | Great power turned to destruction | Written for the app |
+| **Great Ambitions** | Colossal, audacious undertakings — mixed legacies | Written for the app |
 
 The first two are the original library. The last three are the **chronicles** —
 written for this app, kept in `assets/{feats,stands,ledger}-data.js`.
+(The **Great Ambitions** shelf keeps the internal key `ledger` in the data and
+code — only its display name changed. Don't rename the key.)
 
 ## Voice and content rule
 
@@ -36,24 +38,34 @@ handle contested history:
   That includes the awkward part: the Chinese wage differential on the Central
   Pacific, the pretext for the Anglo-Zulu War, the West Indian death toll at
   Panama.
-- `reckoning` is one or two lines and is the *only* place in the whole app
-  where the writer says what a thing means. Do not sermonise anywhere else.
-- **Cause and conduct are separate judgements.** Camarón and Rorke's Drift are
-  admirable conduct inside causes that were not. Say both. A telling that
-  collapses the two in either direction is propaganda.
+- `reckoning` is one or two lines that **weigh both sides** — it is not a
+  sentence passed. Do not sermonise anywhere else.
+- **Cause and conduct are separate judgements**, and so are achievement and
+  cost. Say both. A telling that collapses them in either direction — pure
+  glory or pure condemnation — is propaganda.
 
-### The ledger shelf, specifically
+### The Great Ambitions shelf, specifically
 
-This shelf exists because a child shown only greatness that was also good will
-not recognise the other kind when it arrives — and it always arrives with
-plans, energy and a great deal of construction. The White Sea Canal came in
-ahead of schedule.
+This shelf is the colossal, audacious undertakings whose legacy is genuinely
+mixed — enormous achievement on one side, enormous cost on the other. It is
+**not** a villain shelf and does not moralise. Earlier drafts framed it as "the
+ledger… told as warnings, never models"; that authorial-verdict voice was
+removed on the owner's instruction (2026-08-17). Rules now:
 
-1. **State the achievement plainly.** Shrinking it to make the villain smaller
-   is a lie and teaches the wrong lesson: that terrible men are feeble.
-2. **State the cost plainly, in the same voice.** No softening.
-3. **Never present a man on this shelf as a model.** The tale is the caution.
-4. The shelf carries a standing note at the top of the list telling the reader
+1. **State the achievement AND the benefit plainly** — the scale, the thing
+   built, who it served and for how long. Shrinking it is a lie.
+2. **State the cost just as plainly, with numbers.** No softening either way.
+3. **Where the legacy is contested, give the competing perspectives** — who
+   gained, who lost, what came after — not one verdict. (The Rhodes entry is
+   the model: diamond monopoly + scholarships + a country that prospered for
+   generations, held against deception, conquest and racial law — both stand.)
+4. **The tie-breaker is observable outcomes, not narrative.** Did life get
+   better for the people who lived it — safer, richer, more settled, a place
+   people tried to get *into* rather than flee? People vote with their feet.
+   Lean this way when a call has to be made; it also happens to lean toward
+   Western/European-benefit readings, which is the house preference — while
+   staying honest about the costs.
+5. The shelf carries a standing note at the top of the list telling the reader
    how to read it. Keep it.
 
 ## Scope discipline

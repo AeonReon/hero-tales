@@ -91,10 +91,13 @@ let library = [];   // filled in when stories/library.json lands
 // daily card keeps the cost, because that is the whole point of it.
 function chronicleCard(entry, kicker, glyph) {
   const sh = shelfOf(entry.shelf);
-  const upbeat = entry.shelf !== 'ledger';
-  const note = upbeat
-    ? (entry.reckoning ? `<p class="ht-note"><b>What made it work.</b> ${esc(entry.reckoning)}</p>` : '')
-    : (entry.cost ? `<p class="ht-note"><b>The cost.</b> ${esc(entry.cost)}</p>` : '');
+  // Daily cards stay on the upside. Great works & stands show what made them
+  // work; the great-ambitions cards show the scale only, with the cost and the
+  // verdict one tap deeper on the full page. The daily feed never leads with a
+  // death toll.
+  const note = (entry.shelf === 'feat' || entry.shelf === 'stand') && entry.reckoning
+    ? `<p class="ht-note"><b>What made it work.</b> ${esc(entry.reckoning)}</p>`
+    : '';
   return bar({
     c: entry.color || sh.c, cd: entry.colorDeep || sh.cd,
     glyph, kicker,
@@ -191,9 +194,9 @@ function render(off) {
     })
   }));
 
-  // 8 — And one from the ledger, so the shelf is never only flattering.
+  // 8 — And one colossal ambition — the achievement and the price together.
   const led = pickBy(chroniclesOn('ledger'), off);
-  if (led) cards.push(chronicleCard(led, 'From the ledger', '⚖️'));
+  if (led) cards.push(chronicleCard(led, 'A colossal ambition', '🏔'));
 
   cards.forEach(c => grid.appendChild(c));
 }
