@@ -6,6 +6,13 @@
 // is genuinely mixed: enormous achievement on one side, an enormous cost on
 // the other, and the two do not cancel — they both stand.
 //
+// It also holds the great NORMALISATIONS — the technologies and systems that
+// went from not existing to being the taken-for-granted floor of ordinary life
+// (running water, the car, the Web). Rarely one inventor; usually many hands,
+// with one figure or team who pushed it out into the world. Keep the bar high:
+// only the critical, life-changing foundations that most people now depend on —
+// not every clever invention.
+//
 // House rules for this shelf:
 //  1. State the achievement AND the benefit plainly — the scale, the thing
 //     built, who it served and for how long. Shrinking it is a lie.
@@ -346,6 +353,72 @@ window.CHRONICLES = (window.CHRONICLES || []).concat([
   ],
   cost: 'Around 2,000 colonists dead, a quarter of Scotland\'s liquid wealth lost, and an independent kingdom so weakened that within seven years it was gone.',
   reckoning: 'The idea was not stupid — two centuries later others cut the Panama Canal a few miles away and grew rich on exactly Paterson\'s insight. It was early, under-resourced and unlucky, and it is the shelf\'s sharpest reminder that the line between a visionary and a fool is often only whether the thing worked.'
+},
+
+{
+  id: 'world-wide-web',
+  shelf: 'ledger',
+  title: 'The World Wide Web',
+  kicker: 'One man wrote the code that put the world\'s knowledge a click away — then gave it away for nothing',
+  where: 'CERN, Geneva',
+  when: '1989–1993',
+  who: 'Tim Berners-Lee · Robert Cailliau · CERN',
+  icon: 'cable',
+  color: '#2563A8', colorDeep: '#173F6E',
+  teaser: 'The internet already existed; almost nobody could use it. A software engineer at a physics lab built the layer that made it usable for everyone — and his employer chose to release it free.',
+  body: [
+    'It is worth separating two things people run together. The internet — the network itself, the wiring and the rules for moving data between machines — was largely built by American defence and university research: the ARPANET switched on in 1969, and the common language that ties all networks together, TCP/IP, was set out by Vinton Cerf and Robert Kahn in the 1970s. By the late 1980s that network existed and worked, but using it took specialist skill. There were no web pages, no links, no browser.',
+    'What was missing was a way for an ordinary person to move through information without knowing where any of it physically lived. In March 1989 Tim Berners-Lee, a British software engineer at CERN, the particle-physics laboratory near Geneva, wrote a proposal for exactly that — a "distributed information system" so the lab\'s scientists could share documents across incompatible machines. His manager\'s note on it read, famously, "vague but exciting." With his colleague Robert Cailliau he built the whole thing in about eighteen months: the address (the URL), the page language (HTML), the transfer rule (HTTP), the first browser and the first server. The Web ran inside CERN in 1991.',
+    'The decision that changed history was not technical. In April 1993 CERN placed the World Wide Web software into the public domain — no patent, no licence fee, free for anyone on earth to run, copy and build on. Berners-Lee had pushed for it: a web anyone had to pay to use, or that one company owned, would never become universal. He could have been among the richest men who ever lived, and chose to make the thing a commons.',
+    'It spread at a speed nothing in history matches. Within a few years the Web had gone from a handful of pages at physics labs to the daily habit of a large part of the human race; today it is how most people work, learn, shop, argue and keep in touch, and a life without it is nearly unimaginable across much of the world. An unthinkable weight of human knowledge now sits a few seconds from almost anyone.',
+    'The same openness that let it reach everyone let in everything. The Web that carries every library and every voice also carries the surveillance business built on watching people, the machinery of misinformation, and a concentration of power in a few platforms that would have appalled the man who designed it to be decentralised — Berners-Lee has spent recent years trying to undo exactly that. The tool is as good and as bad as the people using it, which is the standing price of building something everyone can use.'
+  ],
+  cost: 'A commons that quietly became the raw material of mass surveillance and manipulation, and a handful of companies that captured much of what was meant to belong to everyone — set against knowledge and contact for billions, given away free.',
+  reckoning: 'The rare case where the ambition was to keep something open rather than to own it, and it worked well enough to change the species. What has been done to that openness since is a separate story, and mostly not his — the gift and the misuse of the gift are two different ledgers.'
+},
+
+{
+  id: 'ford-assembly-line',
+  shelf: 'ledger',
+  title: 'Ford and the Assembly Line',
+  kicker: 'He did not invent the car; he invented the way to build it cheap enough for the men who made it to own one',
+  where: 'Highland Park, Michigan',
+  when: '1908–1927',
+  who: 'Henry Ford',
+  icon: 'road',
+  color: '#3A3A3A', colorDeep: '#1C1C1C',
+  teaser: 'The automobile existed for twenty years as a rich man\'s toy. Ford\'s method turned it into something an ordinary family could buy — and remade work, cities and daily life in the process.',
+  body: [
+    'When Ford introduced the Model T in 1908 the motor car was a luxury, hand-built and priced out of most lives. Ford\'s conviction was that a car should be simple, tough and cheap enough for the ordinary person, and the way to reach that price was not a better car but a better process. In 1913 his plant at Highland Park installed a moving assembly line: instead of workers walking to the car, the car moved past the workers, each doing one small task over and over. The time to build a Model T fell from more than twelve hours to about ninety minutes.',
+    'The effect on price was the whole point. As the method matured the Model T got cheaper year after year, until by the 1920s something like half the cars on earth were Fords and America had become, uniquely, a country where working people owned automobiles. It put a nation on wheels and remade its cities, its roads, its courtship and its holidays — and it created the pattern, mass production of a standard article at a price its own makers could afford, that would go on to make dozens of other goods cheap and ordinary. Most of the manufactured abundance of the modern world runs on some version of what he proved at Highland Park.',
+    'In 1914 Ford did the other thing he is remembered for: he doubled his workers\' pay to five dollars a day, roughly twice the going rate. It was not simple generosity — the line work was so numbing that men quit in droves, and the high wage was partly to hold them — but it also meant his own workers could buy the product, and it helped invent the idea of a well-paid industrial class that consumes what it builds.',
+    'The costs sit right against the achievement. The line made work faster and duller, a man cut down to one repeated motion, and Ford ran his plants hard, using a brutal private security force against union organising. And there is the part that cannot be set aside: through the 1920s Ford published, under his own name, a newspaper that ran years of vicious antisemitic propaganda, gathered into a book — The International Jew — that circulated worldwide and fed the worst movement of the century. He is the only American praised by name in Hitler\'s Mein Kampf, and in 1938 he accepted the Grand Cross of the German Eagle, the highest honour Nazi Germany gave a foreigner. Under legal pressure he issued a public retraction and apology in 1927 and shut the paper down, and how sincere that was is still argued.',
+    'So the same man normalised a technology that gave hundreds of millions their freedom of movement, and lent his name and his printing press to a poison. Both were done at scale, and neither cancels the other.'
+  ],
+  cost: 'Work stripped to a numbing repeated motion and organised labour fought with violence; and a campaign of antisemitic propaganda, under Ford\'s own name, that reached round the world and was admired by the Nazis who later decorated him.',
+  reckoning: 'His method is in almost everything you own, and his newspaper is in one of history\'s worst chapters. He is the hardest kind of figure to hold honestly — enormously constructive and genuinely poisonous — and the reader is left to carry both without letting either erase the other.'
+},
+
+{
+  id: 'roman-water',
+  shelf: 'ledger',
+  title: 'The Roman Waterworks',
+  kicker: 'They made clean running water and public sanitation ordinary — and then it was lost for a thousand years',
+  where: 'Rome and the Roman world',
+  when: 'from 312 BC',
+  who: 'Appius Claudius Caecus · Frontinus · Rome',
+  icon: 'arch',
+  color: '#9C5A34', colorDeep: '#5E3420',
+  teaser: 'Piped water, public baths, flushing latrines and covered sewers — the things we treat as the baseline of a decent life — were normalised by one civilisation on a scale the West would not see again for over a thousand years.',
+  body: [
+    'Running water in the home, a drain that carries waste away, a clean public supply you never have to think about — we treat these as simply what a city is. For most of human history they were not, and the civilisation that first made them ordinary on a grand scale was Rome. It is the kind of achievement that hides in plain sight precisely because it succeeded so completely that its absence is now hard to picture.',
+    'It was not one invention or one person; it was built up over centuries by many hands. But there are figures. In 312 BC the censor Appius Claudius Caecus — the same man who drove the first great Roman road, the Appian Way — built the first aqueduct, the Aqua Appia, bringing water into the city underground by gravity alone. Ten more followed over the centuries, until imperial Rome was fed by eleven aqueducts supplying hundreds of public fountains, over a thousand basins and hundreds of baths, a quantity of water per head that many modern cities would recognise. An older covered sewer, the Cloaca Maxima, already drained the low ground. Frontinus, put in charge of the water supply around 97 AD, wrote a manual on it and remarked that these useful works could be set against the idle Pyramids.',
+    'The engineering was patient and exact: a fall of a few centimetres per kilometre held steady over tens of kilometres, arcades striding across valleys, siphons and settling tanks, and a web of pipes — many of them lead, which is why we still call it plumbing, from the Latin plumbum. Whether that lead quietly poisoned Rome is a long argument; recent study of the actual pipes suggests the water was contaminated but probably not enough to do widespread harm, and even Rome\'s own Vitruvius warned that clay pipe was healthier than lead.',
+    'Then it went. As the western empire came apart the system decayed for want of anyone able to maintain it, and during the Gothic wars the aqueducts feeding Rome were cut in 537 AD. What followed was not a pause but the loss of the better part of a thousand years: European cities would not again have clean piped water and organised sanitation at that scale until the great engineering of the nineteenth century — the story told on the Great Works shelf as the sewers that saved London.',
+    'That is the part worth sitting with. A thing can be built, made ordinary, relied on by a million people, and still be lost, if the knowledge and the will to keep it going are not handed on. Rome normalised the baseline of modern public health, and then humanity had to discover it all over again.'
+  ],
+  cost: 'Built and run on slave labour like everything Rome made at scale, and piped in part through lead — and, hardest of all, allowed to decay so completely after the empire fell that clean water and sanitation had to be reinvented a thousand years later.',
+  reckoning: 'The lesson here is less about the cost than the fragility: the most useful thing a civilisation ever normalised was also the easiest to lose once nobody could keep it running. What one age treats as the floor of ordinary life, another has to rebuild from nothing.'
 }
 
 ]);
